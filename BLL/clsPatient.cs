@@ -169,6 +169,12 @@ namespace BLL
             }
         }
 
+
+        public DataTable Getp()
+        {
+            DataTable d=new DataTable();
+            return d;
+        }
       
     }
 }
