@@ -170,11 +170,7 @@ namespace BLL
         }
 
 
-        public DataTable Getp()
-        {
-            DataTable s=new DataTable();
-            return s;
-        }
+        
       
     }
 }
