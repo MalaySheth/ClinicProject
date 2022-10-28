@@ -45,7 +45,7 @@ namespace BLL
 
                 if (UsersId > 0)
                 {
-                    sql = string.Format("insert into Patients(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,IsDeleted) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber);Select @@Identity as 'Identity'", UsersId);
+                    sql = string.Format("insert into Patients(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,IsDeleted) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,false);Select @@Identity as 'Identity'", UsersId);
                     cmd.CommandText = sql;
                     rowscount += int.Parse(cmd.ExecuteScalar().ToString());
                     if (rowscount > 0)
@@ -110,7 +110,7 @@ namespace BLL
                 RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                 if(RowsCount>0)
                 {
-                    string sql2 = string.Format("Update  Patients SET FullName=@Password,IsActive=@IsActive where UserId={0}", UsersId);
+                    string sql2 = string.Format("Update  Patients SET FullName=@FullName,Adress=@Adress,PostalCode=@PostalCode,DateOfBirth=@DateOfBirth,PhoneNumber=@PhoneNumber  where UserId={0}", UsersId);
                     cmd.CommandText = sql2;
                     RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                     if(RowsCount>1)
@@ -169,6 +169,12 @@ namespace BLL
             }
         }
 
+
+        public DataTable GetPatientInfoByUserId(int userid)
+        {
+            string sql = string.Format("select * From Patients where UsersNo={0}", userid);
+            return db.ExecuteQuery(sql);
+        }
 
         
       

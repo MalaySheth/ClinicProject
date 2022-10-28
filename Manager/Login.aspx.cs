@@ -20,7 +20,9 @@ namespace Manager
         {
             DataTable dt = new clsUsers().Login(txtEmail.Text, txtPassword.Text);
             if (dt.Rows.Count > 0)
-                lblFeedback.Text = "Login Successful";
+            {
+            
+            }
         }
     }
 }
