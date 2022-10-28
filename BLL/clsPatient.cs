@@ -172,8 +172,8 @@ namespace BLL
 
         public DataTable Getp()
         {
-            DataTable d=new DataTable();
-            return d;
+            DataTable s=new DataTable();
+            return s;
         }
       
     }
