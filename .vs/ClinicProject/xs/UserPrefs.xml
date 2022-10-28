@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{27FFDEC9-45A6-4027-BB62-F8603ED4718A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BLL/clsPatient.cs">
+    <Files>
+      <File FileName="Manager/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="BLL/Properties/AssemblyInfo.cs" Line="14" Column="34" />
+      <File FileName="DAL/DatabaseClass.cs" Line="15" Column="1" />
+      <File FileName="BLL/clsPatient.cs" Line="173" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Manager PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
