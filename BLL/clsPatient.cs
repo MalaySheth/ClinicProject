@@ -155,6 +155,20 @@ namespace BLL
             }
         }
 
+        public DataTable GetAllPatients()
+        {
+            try
+            {
+                string sql = "select * vwFullPatientInfo";
+                return db.ExecuteQuery(sql);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
       
     }
 }
