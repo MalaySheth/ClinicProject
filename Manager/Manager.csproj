@@ -2189,6 +2189,12 @@
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="AddPatient.aspx" />
+    <Content Include="AddDoctor.aspx" />
+    <Content Include="AddCounselor.aspx" />
+    <Content Include="SearchPatient.aspx" />
+    <Content Include="SearchDoctor.aspx" />
+    <Content Include="SearchCounselor.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -2212,6 +2218,48 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPatient.aspx.cs">
+      <DependentUpon>AddPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPatient.aspx.designer.cs">
+      <DependentUpon>AddPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddDoctor.aspx.cs">
+      <DependentUpon>AddDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDoctor.aspx.designer.cs">
+      <DependentUpon>AddDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCounselor.aspx.cs">
+      <DependentUpon>AddCounselor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCounselor.aspx.designer.cs">
+      <DependentUpon>AddCounselor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPatient.aspx.cs">
+      <DependentUpon>SearchPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPatient.aspx.designer.cs">
+      <DependentUpon>SearchPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDoctor.aspx.cs">
+      <DependentUpon>SearchDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchDoctor.aspx.designer.cs">
+      <DependentUpon>SearchDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCounselor.aspx.cs">
+      <DependentUpon>SearchCounselor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchCounselor.aspx.designer.cs">
+      <DependentUpon>SearchCounselor.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
