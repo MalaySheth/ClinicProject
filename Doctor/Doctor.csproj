@@ -2188,6 +2188,7 @@
     <Content Include="assets\plugins\global\plugins.bundle.js" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Dashboard.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -2205,6 +2206,13 @@
       <DependentUpon>main.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\.DS_Store" />
@@ -2272,7 +2280,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58656</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58656/</IISUrl>
+          <IISUrl>http://localhost/Doctor</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

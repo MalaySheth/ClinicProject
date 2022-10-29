@@ -93,7 +93,7 @@
 								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
 									<div></div>
 									<!--begin::Link-->
-									<a href="../../demo18/dist/authentication/layouts/overlay/reset-password.html" class="link-primary">Forgot Password ?</a>
+                                    <asp:Label ID="lblFeedback" runat="server" CssClass="link-danger"></asp:Label>
 									<!--end::Link-->
 								</div>
 								<!--end::Wrapper-->
@@ -101,7 +101,6 @@
 								<div class="d-grid mb-10">
 									<asp:Button id="btnLogin" runat="server" OnClick="btnLogin_Click" class="btn btn-primary" Text="Sign In" />
 									
-                                    <asp:Label ID="lblFeedback" runat="server"></asp:Label>
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
@@ -123,6 +122,14 @@
 		<!--end::Main-->
 		<!--begin::Javascript-->
 		<script>var hostUrl = "assets/";</script>
+        <script type="text/javascript">
+            function HideLabel() {
+                var seconds = 5;
+                setTimeout(function () {
+                    document.getElementById("<%=lblFeedback.ClientID %>").style.display = "none";
+                }, seconds * 1000);
+            };
+        </script>
 		<!--begin::Global Javascript Bundle(used by all pages)-->
 		<script src="assets/plugins/global/plugins.bundle.js"></script>
 		<script src="assets/js/scripts.bundle.js"></script>

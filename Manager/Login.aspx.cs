@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,10 +19,27 @@ namespace Manager
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            DataTable dt = new clsUsers().Login(txtEmail.Text, txtPassword.Text);
+            DataTable dt = new clsUsers().Login(txtEmail.Text, txtPassword.Text,1);
             if (dt.Rows.Count > 0)
             {
-            
+                bool update = new clsUsers().UpdateLastLogin(int.Parse(dt.Rows[0]["UsersId"].ToString()));
+                if (update)
+                {
+                    Session["Email"] = dt.Rows[0]["Email"];
+                    Response.Redirect("~/Dashboard.aspx");
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.IncorrectUsernameOrPassword();
+                    lblFeedback.ForeColor = Color.Red;
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "HideLabel();", true);
+                }
+            }
+            else
+            {
+                lblFeedback.Text = Feedback.IncorrectUsernameOrPassword();
+                lblFeedback.ForeColor = Color.Red;
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "HideLabel();", true);
             }
         }
     }

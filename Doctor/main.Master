@@ -4,16 +4,627 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title>SpiderMedia Reporting Platform </title>
+    <meta charset="utf-8" />
+    <meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask & Laravel versions. Grab your copy now and get life-time updates for free." />
+    <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Blazor, Django, Flask & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Metronic | Bootstrap HTML, VueJS, React, Angular, Asp.Net Core, Blazor, Django, Flask & Laravel Admin Dashboard Theme" />
+    <meta property="og:url" content="https://keenthemes.com/metronic" />
+    <meta property="og:site_name" content="Keenthemes | Metronic" />
+    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Vendor Stylesheets(used by this page)-->
+    <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--end::Global Stylesheets Bundle-->
 </head>
-<body>
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled">
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+        <script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-theme-mode")) { themeMode = document.documentElement.getAttribute("data-theme-mode"); } else { if (localStorage.getItem("data-theme") !== null) { themeMode = localStorage.getItem("data-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-theme", themeMode); }</script>
+        <!--end::Theme mode setup on page load-->
+        <!--begin::Main-->
+        <!--begin::Root-->
+        <div class="d-flex flex-column flex-root">
+            <!--begin::Page-->
+           
+            <div class="page d-flex flex-row flex-column-fluid">
+
+                <!--begin::Aside-->
+                <div id="kt_aside" class="aside px-5" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '285px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
+                    <!--begin::Aside menu-->
+                    <div class="aside-menu flex-column-fluid">
+                        <!--begin::Aside Menu-->
+                        <div class="hover-scroll-overlay-y my-5 me-n4 pe-4" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu" data-kt-scroll-offset="2px">
+                            <!--begin::Menu-->
+                            <div class="menu menu-column menu-sub-indention menu-active-bg menu-state-primary menu-title-gray-700 fs-6 menu-rounded w-100 fw-semibold" id="#kt_aside_menu" data-kt-menu="true">
+
+
+
+
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                    <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                    <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                    <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"></rect>
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Dashboard</span>
+                                    </span>
+                                    <!--end:Menu link-->
+
+
+                                </div>
+                                <!--end:Menu item-->
+
+
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z" fill="currentColor" />
+                                                    <path opacity="0.3" d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Patient</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo18/dist/pages/user-profile/overview.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Add Patient</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo18/dist/pages/user-profile/projects.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">View Patient</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z" fill="currentColor" />
+                                                    <path d="M11.2929 14.7071C11.6834 14.3166 12.3166 14.3166 12.7071 14.7071L15.2929 17.2929C15.6834 17.6834 15.6834 18.3166 15.2929 18.7071L12.7071 21.2929C12.3166 21.6834 11.6834 21.6834 11.2929 21.2929L8.70711 18.7071C8.31658 18.3166 8.31658 17.6834 8.70711 17.2929L11.2929 14.7071Z" fill="currentColor" />
+                                                    <path opacity="0.3" d="M5.29289 8.70711C5.68342 8.31658 6.31658 8.31658 6.70711 8.70711L9.29289 11.2929C9.68342 11.6834 9.68342 12.3166 9.29289 12.7071L6.70711 15.2929C6.31658 15.6834 5.68342 15.6834 5.29289 15.2929L2.70711 12.7071C2.31658 12.3166 2.31658 11.6834 2.70711 11.2929L5.29289 8.70711Z" fill="currentColor" />
+                                                    <path opacity="0.3" d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Doctor</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo18/dist/account/overview.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Add Doctor</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo18/dist/account/settings.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">View Doctor</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6.28548 15.0861C7.34369 13.1814 9.35142 12 11.5304 12H12.4696C14.6486 12 16.6563 13.1814 17.7145 15.0861L19.3493 18.0287C20.0899 19.3618 19.1259 21 17.601 21H6.39903C4.87406 21 3.91012 19.3618 4.65071 18.0287L6.28548 15.0861Z" fill="currentColor" />
+                                                    <rect opacity="0.3" x="8" y="3" width="8" height="8" rx="4" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Counselor</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div class="menu-sub menu-sub-accordion">
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Add Counselor</span>
+                                            </span>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo18/dist/authentication/general/error-500.html">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">View Counselor</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+
+
+                            </div>
+                            <!--end::Menu-->
+                        </div>
+                    </div>
+                    <!--end::Aside menu-->
+                </div>
+
+                <!--end::Aside-->
+
+                <!--begin::Wrapper-->
+                <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="padding-top: 10px !important;">
+                        <!--begin::Header-->
+                        <div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-animation="false" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+                            <!--begin::Container-->
+                            <div class="container-xxl d-flex align-items-center flex-lg-stack">
+                                <!--begin::Brand-->
+                                <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-2 me-lg-5">
+                                    <!--begin::Wrapper-->
+                                    <div class="flex-grow-1">
+                                        <!--begin::Aside toggle-->
+                                        <button class="btn btn-icon btn-color-gray-800 btn-active-color-primary aside-toggle justify-content-start w-30px w-lg-40px" id="kt_aside_toggle">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen059.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect y="6" width="16" height="3" rx="1.5" fill="currentColor" />
+                                                    <rect opacity="0.3" y="12" width="8" height="3" rx="1.5" fill="currentColor" />
+                                                    <rect opacity="0.3" width="12" height="3" rx="1.5" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </button>
+                                        <!--end::Aside toggle-->
+                                        <!--begin::Header Logo-->
+                                        <a href="../../demo18/dist/index.html">
+                                            <img alt="Logo" src="assets/media/logos/merilogo.svg" class="h-30px h-lg-35px" />
+                                        </a>
+                                        <!--end::Header Logo-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Brand-->
+                                <!--begin::Toolbar wrapper-->
+                                <div class="d-flex align-items-stretch flex-shrink-0">
+                                    <!--end::Activities-->
+                                    <!--begin::User menu-->
+                                    <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                        <!--begin::Menu wrapper-->
+                                        <div class="btn btn-color-gray-800 btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px position-relative btn btn-color-gray-800 btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                            <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
+                                            <span class="svg-icon svg-icon-2x">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6.28548 15.0861C7.34369 13.1814 9.35142 12 11.5304 12H12.4696C14.6486 12 16.6563 13.1814 17.7145 15.0861L19.3493 18.0287C20.0899 19.3618 19.1259 21 17.601 21H6.39903C4.87406 21 3.91012 19.3618 4.65071 18.0287L6.28548 15.0861Z" fill="currentColor" />
+                                                    <rect opacity="0.3" x="8" y="3" width="8" height="8" rx="4" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </div>
+                                        <!--begin::User account menu-->
+                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <div class="menu-content d-flex align-items-center px-3">
+                                                    <!--begin::Avatar-->
+
+                                                    <!--end::Avatar-->
+                                                    <!--begin::Username-->
+                                                    <div class="d-flex flex-column">
+                                                        <div class="fw-bold d-flex align-items-center fs-5">
+                                                            <asp:Label ID="lblName" runat="server"></asp:Label>
+                                                   
+                                                            <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Doctor</span>
+                                                        </div>
+                                                        <a  class="fw-semibold text-muted text-hover-primary fs-7"><asp:Label ID="lblEmail" runat="server"></asp:Label></a>
+                                                    </div>
+                                                    <!--end::Username-->
+                                                </div>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu separator-->
+                                            <div class="separator my-2"></div>
+                                            <!--end::Menu separator-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="../../demo18/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+                                            </div>
+                                            <!--end::Menu item-->
+
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="../../demo18/dist/account/statements.html" class="menu-link px-5">Change Password</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="Login.aspx" class="menu-link px-5">Sign Out</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                        </div>
+                                        <!--end::User account menu-->
+                                        <!--end::Menu wrapper-->
+                                    </div>
+                                    <!--end::User menu-->
+
+                                </div>
+                                <!--end::Toolbar wrapper-->
+                            </div>
+                            <!--end::Container-->
+                        </div>
+                        <!--end::Header-->
+
+
+                        <!--end::Header-->
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+
+
+                        <!--begin::Footer-->
+                        <div class="footer pb-4 d-flex flex-lg-column" id="kt_footer" style="background-color: #4f4f4f; padding: 20px 0px 20px 0px;">
+                            <!--begin::Container-->
+                            <div class="container-xxl">
+                                <div class="row">
+                                    <div style="text-align: center">
+                                        <span style="color: white; font-size: 14px">Please contact us if you have any questions. All rights reserved.</span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <!--end::Container-->
+                        </div>
+
+                        <!--end::Footer-->
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--end::Page-->
+            </div>
+
+            </div>
+            <!--end::Root-->
+
+            <!--end::Main-->
+            <!--begin::Engage drawers-->
+
+
+            <!--end::Engage drawers-->
+            <!--begin::Engage toolbar-->
+
+            <!--begin::Modals-->
+
+
+
+            <!--end::Modals-->
+            <!--begin::Javascript-->
+            <script>var hostUrl = "assets/";</script>
+            <!--begin::Global Javascript Bundle(used by all pages)-->
+            <script src="assets/plugins/global/plugins.bundle.js"></script>
+            <script src="assets/js/scripts.bundle.js"></script>
+            <!--end::Global Javascript Bundle-->
+
+            <!--			Custom chart code starts-->
+            <script>
+                $("#kt_datepicker_1").flatpickr();
+
+
+
+                function mediaTypeChartFunction() {
+                    var ctx = document.getElementById('mediaTypeChart');
+
+                    // Define colors
+                    var primaryColor = KTUtil.getCssVariableValue('--kt-primary');
+                    var dangerColor = KTUtil.getCssVariableValue('--kt-danger');
+                    var successColor = KTUtil.getCssVariableValue('--kt-success');
+                    var warningColor = KTUtil.getCssVariableValue('--kt-warning');
+                    var infoColor = KTUtil.getCssVariableValue('--kt-info');
+
+                    // Define fonts
+                    var fontFamily = KTUtil.getCssVariableValue('--bs-font-sans-serif');
+
+                    // Chart labels
+                    const labels = ['Online News', 'Print Media', 'Print Media Overseas', 'Trade Publications', 'Other'];
+
+                    // Chart data
+                    const data = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'My First Dataset',
+                            data: [300, 50, 100, 20, 40],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(82,61,0)',
+                                'rgb(2,61,20)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    };
+
+                    // Chart config
+                    const config = {
+                        type: 'doughnut',
+                        data: data,
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: false,
+                                }
+                            },
+                            responsive: true,
+                        },
+                        defaults: {
+                            global: {
+                                defaultFont: fontFamily
+                            }
+                        }
+                    };
+
+                    // Init ChartJS -- for more info, please visit: https://www.chartjs.org/docs/latest/
+                    var myChart = new Chart(ctx, config);
+                }
+
+                mediaTypeChartFunction();
+
+    </script>
+            <!--			Custom chart code ends-->
+
+
+            <!--			Custom chart code starts-->
+            <script>
+
+                function industryTypeChartFunction() {
+                    var ctx = document.getElementById('industryTypeChart');
+
+                    // Define colors
+                    var primaryColor = KTUtil.getCssVariableValue('--kt-primary');
+                    var dangerColor = KTUtil.getCssVariableValue('--kt-danger');
+                    var successColor = KTUtil.getCssVariableValue('--kt-success');
+                    var warningColor = KTUtil.getCssVariableValue('--kt-warning');
+                    var infoColor = KTUtil.getCssVariableValue('--kt-info');
+
+                    // Define fonts
+                    var fontFamily = KTUtil.getCssVariableValue('--bs-font-sans-serif');
+
+
+                    // Chart labels
+                    const labels = ['News and Media', 'Investing', 'Medicine/Health', 'Fashion/Art', 'Gaming', 'Other'];
+
+                    // Chart data
+                    const data = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'My First Dataset 2',
+                            data: [300, 50, 100],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(11,210,75)',
+                                'rgb(147,104,0)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    };
+
+                    // Chart config
+                    const config = {
+                        type: 'doughnut',
+                        data: data,
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: false,
+                                }
+                            },
+                            responsive: true,
+                        },
+                        defaults: {
+                            global: {
+                                defaultFont: fontFamily
+                            }
+                        }
+                    };
+                    // Init ChartJS -- for more info, please visit: https://www.chartjs.org/docs/latest/
+                    var myChart = new Chart(ctx, config);
+                }
+                industryTypeChartFunction();
+    </script>
+            <!--			Custom chart code ends-->
+
+
+            <script>
+                function potentialReachChartFunction() {
+
+
+
+                    // Define colors
+                    var ctx = document.getElementById('potentialReachChart');
+                    var primaryColor = KTUtil.getCssVariableValue('--kt-primary');
+                    var dangerColor = KTUtil.getCssVariableValue('--kt-danger');
+                    var successColor = KTUtil.getCssVariableValue('--kt-success');
+                    var warningColor = KTUtil.getCssVariableValue('--kt-warning');
+                    var infoColor = KTUtil.getCssVariableValue('--kt-info');
+
+                    // Define fonts
+                    var fontFamily = KTUtil.getCssVariableValue('--bs-font-sans-serif');
+
+                    // Chart labels
+                    const labels = ['Trade', 'Finance', 'Portal', 'News', 'Newswire', 'Chinese', 'Local', 'Mobile'];
+
+                    // Chart data
+                    const data = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'My First Dataset 2',
+                            data: [300, 50, 100, 20, 40, 50, 100, 400],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(42,30,4)',
+                                'rgb(11,169,48)',
+                                'rgb(245,7,187)',
+                                'rgba(180,8,21,0.96)',
+                                'rgba(11,50,218,0.71)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                    };
+
+                    // Chart config
+                    const config = {
+                        type: 'bar',
+                        data: data,
+                        options: {
+                            indexAxis: 'y',
+                            plugins: {
+                                title: {
+                                    display: false,
+                                },
+                                legend: {
+                                    display: false
+                                }
+                            },
+                            responsive: true,
+                        },
+                        defaults: {
+                            global: {
+                                defaultFont: fontFamily
+                            }
+                        }
+                    };
+                    // Init ChartJS -- for more info, please visit: https://www.chartjs.org/docs/latest/
+
+                    var myChart = new Chart(ctx, config);
+
+
+                }
+                potentialReachChartFunction();
+    </script>
+            <!--			Custom chart code ends-->
+
+
+            <!--begin::Vendors Javascript(used by this page)-->
+            <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+            <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+            <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+            <!--end::Vendors Javascript-->
+            <!--begin::Custom Javascript(used by this page)-->
+            <script src="assets/js/widgets.bundle.js"></script>
+            <script src="assets/js/custom/widgets.js"></script>
+            <script src="assets/js/custom/apps/chat/chat.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/type.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/budget.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/settings.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/team.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/targets.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/files.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/complete.js"></script>
+            <script src="assets/js/custom/utilities/modals/create-project/main.js"></script>
+            <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+            <!--end::Custom Javascript-->
+            <!--end::Javascript-->
     </form>
 </body>
 </html>
+

@@ -11,7 +11,11 @@ namespace Patient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                lblName.Text = Session["PatientName"].ToString();
+                lblEmail.Text = Session["Email"].ToString();
+            }
         }
     }
 }

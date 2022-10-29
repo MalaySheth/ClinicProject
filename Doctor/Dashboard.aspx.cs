@@ -7,15 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Doctor
 {
-    public partial class main : System.Web.UI.MasterPage
+    public partial class Dashboard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-            {
-                lblName.Text = Session["DoctorName"].ToString();
-                lblEmail.Text = Session["Email"].ToString();
-            }
+
         }
     }
 }

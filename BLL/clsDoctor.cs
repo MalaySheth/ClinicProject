@@ -14,7 +14,7 @@ namespace BLL
         DatabaseClass db = new DatabaseClass();
 
 
-        public int InsertDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email,bool IsApproved,string Registration_Approval_DateTime)
+        public int InsertDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email,bool IsApproved,string Registration_Approval_DateTime, bool IsActive)
         {
             if (db.cn.State != ConnectionState.Open)
             {
@@ -42,7 +42,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@Registration_Approval_DateTime",IsApproved?DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()):Registration_Approval_DateTime);
                 
 
-                sql = string.Format("Insert Into Users(Email,Password,RoleNo) values (@Email,@Password,2);Select @@Identity as 'Identity'");
+                sql = string.Format("Insert Into Users(Email,Password,RoleNo,IsActive) values (@Email,@Password,2,{0});Select @@Identity as 'Identity'",IsActive);
                 cmd.CommandText = sql;
                 int UsersId = int.Parse(cmd.ExecuteScalar().ToString());
 

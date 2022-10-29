@@ -11,7 +11,7 @@ namespace Manager
 {
 
 
-    public partial class main
+    public partial class Main
     {
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace Manager
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>

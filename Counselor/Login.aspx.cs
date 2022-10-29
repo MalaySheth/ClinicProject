@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,12 +18,31 @@ namespace Counselor
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            DataTable dt = new clsUsers().Login(txtEmail.Text, txtPassword.Text);
+            DataTable dt = new clsUsers().Login(txtEmail.Text, txtPassword.Text,3);
             if (dt.Rows.Count > 0)
             {
                 DataTable dtCounselor = new clsCounselor().GetCounselorInfoByUserId(int.Parse(dt.Rows[0]["UsersId"].ToString()));
-                Session["CounselorId"] = dtCounselor.Rows[0]["CounselorsId"];
-                Session["CounselorName"] = dtCounselor.Rows[0]["FullName"];
+                
+                bool update = new clsUsers().UpdateLastLogin(int.Parse(dt.Rows[0]["UsersId"].ToString()));
+                if (update)
+                {
+                    Session["CounselorId"] = dtCounselor.Rows[0]["CounselorsId"];
+                    Session["CounselorName"] = dtCounselor.Rows[0]["FullName"];
+                    Session["Email"] = dt.Rows[0]["Email"];
+                    Response.Redirect("~/Dashboard.aspx");
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.IncorrectUsernameOrPassword();
+                    lblFeedback.ForeColor = Color.Red;
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "HideLabel();", true);
+                }
+            }
+            else
+            {
+                lblFeedback.Text = Feedback.IncorrectUsernameOrPassword();
+                lblFeedback.ForeColor = Color.Red;
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "HideLabel();", true);
             }
         }
     }
