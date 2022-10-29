@@ -1,17 +1,7 @@
-﻿<Properties StartupConfiguration="{27FFDEC9-45A6-4027-BB62-F8603ED4718A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Manager/AddPatients.aspx">
-    <Files>
-      <File FileName="DAL/DatabaseClass.cs" Line="69" Column="81" />
-      <File FileName="Patient/main.Master.cs" Line="1" Column="1" />
-      <File FileName="Patient/main.Master.designer.cs" Line="1" Column="1" />
-      <File FileName="Patient/main.Master" Line="1" Column="1" />
-      <File FileName="Manager/Dashboard.aspx" Line="1" Column="1" />
-      <File FileName="Manager/Login.aspx" Line="1" Column="1" />
-      <File FileName="Manager/AddPatients.aspx" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Manager PreferredExecutionTarget="MonoDevelop.Default" />
+﻿<Properties StartupConfiguration="{6D6B6F18-39E6-48FB-AA88-76B99CE8083E}|">
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Patient PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

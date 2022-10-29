@@ -11,3 +11,4 @@ C:/Users/hp/source/repos/ClinicProject/DAL/obj/Debug/DAL.pdb
 /Users/amrindersingh/projects/ClinicProject/DAL/obj/Debug/DAL.csproj.CoreCompileInputs.cache
 /Users/amrindersingh/projects/ClinicProject/DAL/obj/Debug/DAL.dll
 /Users/amrindersingh/projects/ClinicProject/DAL/obj/Debug/DAL.pdb
+/Users/amrindersingh/projects/ClinicProject/DAL/obj/Debug/DAL.csprojAssemblyReference.cache

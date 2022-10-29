@@ -2188,16 +2188,13 @@
     <Content Include="assets\plugins\global\plugins.bundle.js" />
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
-<<<<<<< HEAD
     <Content Include="Login.aspx" />
-=======
     <Content Include="AddPatient.aspx" />
     <Content Include="AddDoctor.aspx" />
     <Content Include="AddCounselor.aspx" />
     <Content Include="SearchPatient.aspx" />
     <Content Include="SearchDoctor.aspx" />
     <Content Include="SearchCounselor.aspx" />
->>>>>>> 0515c330d9c6009ef8f282f13ab77a56c85906b4
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">

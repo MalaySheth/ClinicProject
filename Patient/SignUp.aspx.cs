@@ -47,7 +47,14 @@ namespace Patient
 
         protected void clear()
         {
-            txtFullName.Text
+            txtFullName.Text = "";
+            txtAddress.Text = "";
+            txtConfirmPassword.Text = "";
+            txtDateofBirth.Text = "";
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+            txtPhoneNumber.Text = "";
+            txtPostalcode.Text = "";
         }
     }
 }
