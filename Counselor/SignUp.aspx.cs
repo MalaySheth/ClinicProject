@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Patient
+namespace Counselor
 {
     public partial class SignUp : System.Web.UI.Page
     {
@@ -20,8 +20,8 @@ namespace Patient
         {
             try
             {
-                int UserId = new clsPatient().InsertPatients(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text);
-                if(UserId>0)
+                int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,null,false,null);
+                if (UserId > 0)
                 {
                     clear();
                     lblFeedback.Text = Feedback.RegistrationSuccessfull();
@@ -56,7 +56,7 @@ namespace Patient
             txtPassword.Text = "";
             txtPhoneNumber.Text = "";
             txtPostalcode.Text = "";
-            
+
         }
     }
 }

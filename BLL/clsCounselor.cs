@@ -77,7 +77,7 @@ namespace BLL
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 trans.Rollback();

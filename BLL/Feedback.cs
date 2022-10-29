@@ -17,7 +17,14 @@ namespace BLL
         {
             return "Data Added Successfully!";
         }
-
+        public static string RegistrationSuccessfull()
+        {
+            return "Registered Successfully!";
+        }
+        public static string RegistrationException()
+        {
+            return "Registration Failed!";
+        }
         public static string SendSuccesfully()
         {
             return "The E-mail Message Had Been Sent Successfully!";
