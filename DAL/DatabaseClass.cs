@@ -11,7 +11,6 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Http;
 
 
 /// <summary>
@@ -61,13 +60,13 @@ namespace DAL
         {
            
            // serverName = @"BHUMIKA-PC\SQLEXPRESS";
-            serverName = @"MALAY-PC\SQLEXPRESS";
+            serverName = @"127.0.0.1";
             dbName = "Clinic";
             //dbName = "UserAcounts";
             //serverName = @"EMC-PC";
             
             //connectionString = string.Format("server={0};Integrated Security=True;database={1}", serverName, dbName);
-            connectionString = string.Format(@" Server={0}; Database={1}; uid=clinic; pwd=clinic123; trusted_connection=false; ", serverName, dbName);
+            connectionString = string.Format(@" Server={0}; Database={1}; uid=SA; pwd=Clinic@123; trusted_connection=false; ", serverName, dbName);
             cn = new SqlConnection(connectionString);
         }
         

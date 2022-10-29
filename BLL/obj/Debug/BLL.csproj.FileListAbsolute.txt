@@ -1,9 +1,21 @@
-/Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.csprojAssemblyReference.cache
-/Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
+=======
+C:/Users/hp/source/repos/ClinicProject/BLL/obj/Debug/BLL.csprojAssemblyReference.cache
+C:/Users/hp/source/repos/ClinicProject/BLL/obj/Debug/BLL.csproj.CoreCompileInputs.cache
+C:/Users/hp/source/repos/ClinicProject/BLL/bin/Debug/BLL.dll
+C:/Users/hp/source/repos/ClinicProject/BLL/bin/Debug/BLL.pdb
+C:/Users/hp/source/repos/ClinicProject/BLL/bin/Debug/DAL.dll
+C:/Users/hp/source/repos/ClinicProject/BLL/bin/Debug/DAL.pdb
+C:/Users/hp/source/repos/ClinicProject/BLL/obj/Debug/BLL.csproj.CopyComplete
+C:/Users/hp/source/repos/ClinicProject/BLL/obj/Debug/BLL.dll
+C:/Users/hp/source/repos/ClinicProject/BLL/obj/Debug/BLL.pdb
+>>>>>>> 4937299ec30ca1c03e3289e90b4dcfcd353e4c74
 /Users/amrindersingh/projects/ClinicProject/BLL/bin/Debug/BLL.dll
 /Users/amrindersingh/projects/ClinicProject/BLL/bin/Debug/BLL.pdb
 /Users/amrindersingh/projects/ClinicProject/BLL/bin/Debug/DAL.dll
 /Users/amrindersingh/projects/ClinicProject/BLL/bin/Debug/DAL.pdb
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.csprojAssemblyReference.cache
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.csproj.CoreCompileInputs.cache
 /Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.csproj.CopyComplete
 /Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.dll
 /Users/amrindersingh/projects/ClinicProject/BLL/obj/Debug/BLL.pdb
