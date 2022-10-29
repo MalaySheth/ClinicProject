@@ -105,7 +105,7 @@
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
 								<div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet?
-								<a href="../../demo18/dist/authentication/layouts/overlay/sign-up.html" class="link-primary">Sign up</a></div>
+								<a href="SignUp.aspx" class="link-primary">Sign up</a></div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->
