@@ -14,7 +14,7 @@ namespace BLL
         DatabaseClass db = new DatabaseClass();
 
 
-        public int InsertDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email,bool IsApproved,string Registration_Approval_DateTime, bool IsActive)
+        public int InsertDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email,bool IsApproved,string Registration_Approval_DateTime, bool IsActive,string RegistrationNumber)
         {
             if (db.cn.State != ConnectionState.Open)
             {
@@ -38,6 +38,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@DateOfBirth", DatabaseClass.FormatDateArEgMDY(DateTime.Parse(Birthdate).ToShortDateString()));
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@IsApproved", IsApproved);
+                cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
                 cmd.Parameters.AddWithValue("@Registration_Approval_DateTime",IsApproved?DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()):Registration_Approval_DateTime);
                 
@@ -48,7 +49,7 @@ namespace BLL
 
                 if (UsersId > 0)
                 {
-                    sql = string.Format("insert into Doctors(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,Registration_Approval_DateTime,IsApproved) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,@Registration_Approval_DateTime,@IsApproved);Select @@Identity as 'Identity'", UsersId);
+                    sql = string.Format("insert into Doctors(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,Registration_Approval_DateTime,IsApproved,RegistrationNumber) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,@Registration_Approval_DateTime,@IsApproved,@RegistrationNumber);Select @@Identity as 'Identity'", UsersId);
                     cmd.CommandText = sql;
                     rowscount += int.Parse(cmd.ExecuteScalar().ToString());
                     if (rowscount > 0)
@@ -85,7 +86,7 @@ namespace BLL
             }
         }
 
-        public bool UpdateDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email, bool isactive, bool IsApproved, string Registration_Approval_DateTime, int Doctorid)
+        public bool UpdateDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email, bool isactive, bool IsApproved, string Registration_Approval_DateTime,string RegistrationNumber, int Doctorid)
         {
             if (db.cn.State != ConnectionState.Open)
             {
@@ -108,6 +109,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@IsApproved", IsApproved);
+                cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
                 cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
                 int UsersId = GetUsersIdbyDoctorId(Doctorid);
@@ -116,7 +118,7 @@ namespace BLL
                 RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                 if (RowsCount > 0)
                 {
-                    string sql2 = string.Format("Update  Doctors SET FullName=@FullName,Adress=@Adress,PostalCode=@PostalCode,DateOfBirth=@DateOfBirth,PhoneNumber=@PhoneNumber,Registration_Approval_DateTime=@Registration_Approval_DateTime,IsApproved=@IsApproved where UserId={0}", UsersId);
+                    string sql2 = string.Format("Update  Doctors SET FullName=@FullName,Adress=@Adress,PostalCode=@PostalCode,DateOfBirth=@DateOfBirth,PhoneNumber=@PhoneNumber,Registration_Approval_DateTime=@Registration_Approval_DateTime,IsApproved=@IsApproved,RegistrationNumber=@RegistrationNumber where UserId={0}", UsersId);
                     cmd.CommandText = sql2;
                     RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                     if (RowsCount > 1)
