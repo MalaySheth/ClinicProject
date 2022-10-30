@@ -23,6 +23,7 @@ namespace Patient
                 int UserId = new clsPatient().InsertPatients(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text);
                 if(UserId>0)
                 {
+                    clear();
                     lblFeedback.Text = Feedback.RegistrationSuccessfull();
                     lblFeedback.ForeColor = Color.Green;
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "HideLabel();", true);

@@ -1,5 +1,21 @@
-﻿<Properties StartupConfiguration="{6D6B6F18-39E6-48FB-AA88-76B99CE8083E}|">
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupConfiguration="{27FFDEC9-45A6-4027-BB62-F8603ED4718A}|">
+  <MonoDevelop.Ide.ItemProperties.Counselor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Manager/AddCounselor.aspx">
+    <Files>
+      <File FileName="Manager/AddDoctor.aspx" Line="51" Column="18" />
+      <File FileName="Manager/AddCounselor.aspx" Line="91" Column="43" />
+      <File FileName="Manager/.#SearchDoctor.aspx" Line="50" Column="33" />
+      <File FileName="Manager/SearchDoctor.aspx" Line="115" Column="24" />
+      <File FileName="Manager/.#SearchDoctor.aspx.designer.cs" Line="37" Column="62" />
+      <File FileName="Doctor/SignUp.aspx" Line="1" Column="1" />
+      <File FileName="Doctor/Dashboard.aspx" Line="1" Column="1" />
+      <File FileName="Doctor/Login.aspx" Line="100" Column="23" />
+      <File FileName="Manager/AddPatient.aspx" Line="104" Column="4" />
+      <File FileName="Manager/Login.aspx" Line="113" Column="141" />
+      <File FileName="Manager/SearchCounselor.aspx" Line="37" Column="38" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Manager PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Patient PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -1,0 +1,9 @@
+/Users/amrindersingh/projects/ClinicProject/BLL/bin/Release/BLL.dll
+/Users/amrindersingh/projects/ClinicProject/BLL/bin/Release/BLL.pdb
+/Users/amrindersingh/projects/ClinicProject/BLL/bin/Release/DAL.dll
+/Users/amrindersingh/projects/ClinicProject/BLL/bin/Release/DAL.pdb
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Release/BLL.csprojAssemblyReference.cache
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Release/BLL.csproj.CoreCompileInputs.cache
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Release/BLL.csproj.CopyComplete
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Release/BLL.dll
+/Users/amrindersingh/projects/ClinicProject/BLL/obj/Release/BLL.pdb

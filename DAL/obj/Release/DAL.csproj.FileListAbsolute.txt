@@ -1,0 +1,5 @@
+/Users/amrindersingh/projects/ClinicProject/DAL/bin/Release/DAL.dll
+/Users/amrindersingh/projects/ClinicProject/DAL/bin/Release/DAL.pdb
+/Users/amrindersingh/projects/ClinicProject/DAL/obj/Release/DAL.csproj.CoreCompileInputs.cache
+/Users/amrindersingh/projects/ClinicProject/DAL/obj/Release/DAL.dll
+/Users/amrindersingh/projects/ClinicProject/DAL/obj/Release/DAL.pdb

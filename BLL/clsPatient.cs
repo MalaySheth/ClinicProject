@@ -45,7 +45,7 @@ namespace BLL
 
                 if (UsersId > 0)
                 {
-                    sql = string.Format("insert into Patients(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,IsDeleted) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,false);Select @@Identity as 'Identity'", UsersId);
+                    sql = string.Format("insert into Patients(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,IsDeleted) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,'false');Select @@Identity as 'Identity'", UsersId);
                     cmd.CommandText = sql;
                     rowscount += int.Parse(cmd.ExecuteScalar().ToString());
                     if (rowscount > 0)
@@ -73,7 +73,7 @@ namespace BLL
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 trans.Rollback();

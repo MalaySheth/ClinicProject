@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="fv-row mb-8">
                                         <!--begin::Email-->
-                                        <asp:TextBox ID="txtDateofBirth" runat="server" placeholder="Date of Birth" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                        <asp:TextBox ID="txtDateofBirth" runat="server" placeholder="Date of Birth" name="name" TextMode="Date" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
                                         <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator4" ControlToValidate="txtDateofBirth" ErrorMessage="Birth Date Required!" ForeColor="Red"></asp:RequiredFieldValidator>
                                         <!--end::Email-->
                                     </div>
