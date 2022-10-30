@@ -16,7 +16,7 @@
                             <!--begin::Header-->
                             <div class="card-header border-0 pt-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold fs-1 mb-1">Add New Chancellor</span>
+                                    <span class="card-label fw-bold fs-1 mb-1">Add New Counselor</span>
                                 </h3>
                             </div>
                             <!--end::Header-->
@@ -111,7 +111,7 @@
             <!--end::Container-->
 
             <div style="text-align: center">
-                <asp:Button ID="btnAddCounsellor" runat="server" OnClick="btnAddCounsellor_Click" class="btn btn-bg-smorange btn-color-white mb-13" Text="Add Chancellor" />
+                <asp:Button ID="btnAddCounsellor" runat="server" OnClick="btnAddCounsellor_Click" class="btn btn-bg-smorange btn-color-white mb-13" Text="Add Counselor" />
             </div>
 
             <!--end::Actions-->
