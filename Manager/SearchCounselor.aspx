@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SearchCounselor.aspx.cs" Inherits="Manager.SearchCounselor" %>
 <!--begin::First Container-->
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
     <!--begin::Post-->
     <div class="content flex-row-fluid" id="kt_content">
@@ -199,4 +200,4 @@
                 </div>
                 <!--end::Container-->
                
-
+             </asp:Content>

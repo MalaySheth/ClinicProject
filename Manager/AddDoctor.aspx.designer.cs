@@ -13,6 +13,8 @@ namespace Manager {
 	
 	public partial class AddDoctor {
 		
+		protected System.Web.UI.WebControls.Content Content1;
+		
 		protected System.Web.UI.WebControls.TextBox txtFullName;
 		
 		protected System.Web.UI.WebControls.TextBox txtEmail;

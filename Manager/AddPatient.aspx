@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="AddPatient.aspx.cs" Inherits="Manager.AddPatient" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!--begin::First Container-->
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
   <!--begin::Post-->
@@ -108,4 +109,5 @@
 <script>
     $("#txtBirthDate").flatpickr();
 </script>
+ </asp:Content>
 

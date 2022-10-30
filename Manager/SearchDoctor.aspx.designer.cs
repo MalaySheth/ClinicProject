@@ -13,6 +13,8 @@ namespace Manager {
 	
 	public partial class SearchDoctor {
 		
+		protected System.Web.UI.WebControls.Content Content1;
+		
 		protected System.Web.UI.WebControls.TextBox txtEmail;
 		
 		protected System.Web.UI.WebControls.Button btnSearch;

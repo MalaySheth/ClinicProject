@@ -13,9 +13,11 @@ namespace Manager {
 	
 	public partial class SearchPatient {
 		
+		protected System.Web.UI.WebControls.Content Content1;
+		
 		protected System.Web.UI.WebControls.TextBox txtEmail;
 		
-		protected System.Web.UI.WebControls.Button btnAddPatient;
+		protected System.Web.UI.WebControls.Button btnSearch;
 		
 		protected System.Web.UI.WebControls.TextBox txtPhoneNumber;
 		
