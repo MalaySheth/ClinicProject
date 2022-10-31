@@ -12,14 +12,14 @@ namespace BLL
     public class clsUsers
     {
         DatabaseClass db = new DatabaseClass();
-        public DataTable Login(string Email, string Password)
+        public DataTable Login(string Email, string Password,int roleno)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Parameters.Add("@Email", SqlDbType.VarChar, 100).Value = Email;
                 cmd.Parameters.Add("@Password", SqlDbType.VarChar, 100).Value = Password;
-                cmd.CommandText = "SELECT * FROM Users WHERE Email=@Email AND Password=@Password and IsActive=1";
+                cmd.CommandText = string.Format("SELECT * FROM Users WHERE Email=@Email AND Password=@Password and IsActive=1 and RoleNo={0}",roleno);
                 cmd.Connection = db.cn;
                 return db.ExecuteQuery(cmd);
             }
@@ -85,6 +85,18 @@ namespace BLL
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        public bool UpdateLastLogin(int UserId)
+        {
+            int rowscount=0;
+            string sql = string.Format("Update Users set last_login_datetime=getdate() where UsersId={0}", UserId);
+            rowscount += db.ExecuteNonQuery(sql);
+            if (rowscount > 0)
+                return true;
+            else
+                return false;
+
         }
     }
 }
