@@ -14,7 +14,7 @@ namespace BLL
         DatabaseClass db = new DatabaseClass();
 
 
-        public int InsertDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email,bool IsApproved,string Registration_Approval_DateTime, bool IsActive,string RegistrationNumber)
+        public int InsertDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email, bool IsApproved, string Registration_Approval_DateTime, bool IsActive, string RegistrationNumber)
         {
             if (db.cn.State != ConnectionState.Open)
             {
@@ -24,7 +24,7 @@ namespace BLL
             SqlTransaction trans = db.cn.BeginTransaction();
             try
             {
-                
+
                 string sql = "";
                 int rowscount = 0;
                 SqlCommand cmd = new SqlCommand();
@@ -39,16 +39,16 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime",IsApproved?DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()):Registration_Approval_DateTime);
-                
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
 
-                sql = string.Format("Insert Into Users(Email,Password,RoleNo,IsActive) values (@Email,@Password,2,'{0}');Select @@Identity as 'Identity'",IsActive);
+
+                sql = string.Format("Insert Into Users(Email,Password,RoleNo,IsActive) values (@Email,@Password,2,'{0}');Select @@Identity as 'Identity'", IsActive);
                 cmd.CommandText = sql;
                 int UsersId = int.Parse(cmd.ExecuteScalar().ToString());
 
                 if (UsersId > 0)
                 {
-                    sql = string.Format("insert into Doctors(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,Registration_Approval_DateTime,IsApproved,RegistrationNumber) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,@Registration_Approval_DateTime,'{1}',@RegistrationNumber);Select @@Identity as 'Identity'", UsersId,IsApproved);
+                    sql = string.Format("insert into Doctors(UsersNo,FullName,Adress,PostalCode,DateOfBirth,PhoneNumber,Registration_Approval_DateTime,IsApproved,RegistrationNumber) values ({0},@FullName,@Adress,@PostalCode,@DateOfBirth,@PhoneNumber,@Registration_Approval_DateTime,'{1}',@RegistrationNumber);Select @@Identity as 'Identity'", UsersId, IsApproved);
                     cmd.CommandText = sql;
                     rowscount += int.Parse(cmd.ExecuteScalar().ToString());
                     if (rowscount > 0)
@@ -85,7 +85,7 @@ namespace BLL
             }
         }
 
-        public bool UpdateDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string Password, string email, bool isactive, bool IsApproved, string Registration_Approval_DateTime,string RegistrationNumber, int Doctorid)
+        public bool UpdateDoctors(string FullName, string Adress, string PostalCode, string Birthdate, string PhoneNumber, string email, bool isactive, bool IsApproved, string Registration_Approval_DateTime, string RegistrationNumber, int Doctorid)
         {
             if (db.cn.State != ConnectionState.Open)
             {
@@ -99,7 +99,6 @@ namespace BLL
                 cmd.Connection = db.cn;
                 cmd.Transaction = trans;
                 int RowsCount = 0;
-                cmd.Parameters.AddWithValue("@Password", Password);
                 cmd.Parameters.AddWithValue("@FullName", FullName);
                 cmd.Parameters.AddWithValue("@Adress", Adress);
                 cmd.Parameters.AddWithValue("@PostalCode", PostalCode);
@@ -109,13 +108,21 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
                 cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
-                int UsersId = GetUsersIdbyDoctorId(Doctorid);
-                string sql = string.Format("Update  Users SET Email=@Email,Password=@Password,IsActive='{1}' where UserId={0}", UsersId,isactive);
+                int UsersId = GetUsersIdbyDoctorId(Doctorid,cmd);
+                if (db.cn.State != ConnectionState.Open)
+                {
+                    db.cn.Open();
+                }
+                string sql = string.Format("Update  Users SET Email=@Email,IsActive='{1}' where UsersId={0}", UsersId, isactive);
                 cmd.CommandText = sql;
                 RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                 if (RowsCount > 0)
                 {
-                    string sql2 = string.Format("Update  Doctors SET FullName=@FullName,Adress=@Adress,PostalCode=@PostalCode,DateOfBirth=@DateOfBirth,PhoneNumber=@PhoneNumber,Registration_Approval_DateTime=@Registration_Approval_DateTime,IsApproved='{1}',RegistrationNumber=@RegistrationNumber where UserId={0}", UsersId,IsApproved);
+                    if (db.cn.State != ConnectionState.Open)
+                    {
+                        db.cn.Open();
+                    }
+                    string sql2 = string.Format("Update  Doctors SET FullName=@FullName,Adress=@Adress,PostalCode=@PostalCode,DateOfBirth=@DateOfBirth,PhoneNumber=@PhoneNumber,Registration_Approval_DateTime=@Registration_Approval_DateTime,IsApproved='{1}',RegistrationNumber=@RegistrationNumber where UsersNo={0}", UsersId, IsApproved);
                     cmd.CommandText = sql2;
                     RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                     if (RowsCount > 1)
@@ -138,7 +145,7 @@ namespace BLL
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 trans.Rollback();
@@ -147,12 +154,13 @@ namespace BLL
             }
         }
 
-        public int GetUsersIdbyDoctorId(int Doctorid)
+        public int GetUsersIdbyDoctorId(int Doctorid,SqlCommand cmd)
         {
             try
             {
                 string sql = string.Format("select UsersNo from Doctors where DoctorsId={0}", Doctorid);
-                return int.Parse(db.ExecuteScalar(sql).ToString());
+                cmd.CommandText = sql;
+                return int.Parse(cmd.ExecuteScalar().ToString());
             }
             catch
             {
@@ -177,8 +185,141 @@ namespace BLL
 
         public DataTable GetDoctorInfoByUserId(int userid)
         {
-            string sql = string.Format("select * From Doctors where UsersNo={0}", userid);
+            string sql = string.Format("select * From vwFullDoctorInfo where UsersNo={0}", userid);
             return db.ExecuteQuery(sql);
+        }
+
+        public DataTable GetDoctorInfoByDoctorId(int DoctorId)
+        {
+            string sql = string.Format("select * From vwFullDoctorInfo where DoctorsId={0}", DoctorId);
+            return db.ExecuteQuery(sql);
+        }
+
+        public DataTable SearchDoctors(string fullName, string email, string adress, string registrationNumber, string phoneNumber)
+        {
+            try
+            {
+                string sql = "", qryFullName = "", qryAdress = "", qryRegistrationNumber = "", qryEmail = "", qryPhoneNumber = "";
+                bool FirstArg = true;
+                if (!string.IsNullOrEmpty(fullName))
+                {
+                    if (FirstArg)
+                    {
+                        qryFullName = string.Format("where FullName Like'{0}%'", fullName);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryFullName = string.Format("and FullName Like'{0}%'", fullName);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(email))
+                {
+                    if (FirstArg)
+                    {
+                        qryEmail = string.Format("where Email Like '{0}%'", email);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryEmail = string.Format("and Email Like '{0}%'", email);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(phoneNumber))
+                {
+                    if (FirstArg)
+                    {
+                        qryPhoneNumber = string.Format("where PhoneNumber Like '{0}%'", phoneNumber);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryPhoneNumber = string.Format("and PhoneNumber Like '{0}%'", phoneNumber);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(adress))
+                {
+                    if (FirstArg)
+                    {
+                        qryAdress = string.Format("where Adress Like '{0}%'", adress);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryAdress = string.Format("and Adress like '{0}%'", adress);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(registrationNumber))
+                {
+                    if (FirstArg)
+                    {
+                        qryRegistrationNumber = string.Format("where RegistrationNumber Like '{0}%'", registrationNumber);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryRegistrationNumber = string.Format("and RegistrationNumber like '{0}%'", registrationNumber);
+                    }
+                }
+
+                sql = string.Format("select * from vwFullDoctorInfo {0} {1} {2} {3} {4}", qryFullName, qryEmail, qryPhoneNumber, qryAdress, qryRegistrationNumber);
+                return db.ExecuteQuery(sql);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool DeleteDoctor(int doctorsId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                int RowsCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+                int UserId = GetUsersIdbyDoctorId(doctorsId, cmd);
+                string sql = string.Format("delete from Doctors where DoctorsId={0}", doctorsId);
+                cmd.CommandText = sql;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                string sql2 = string.Format("delete from Users where UsersId={0}", UserId);
+                cmd.CommandText = sql2;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                if (RowsCount > 0)
+                {
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
         }
     }
 }
