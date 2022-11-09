@@ -263,9 +263,9 @@ namespace BLL
             return "Error: Operation is not canceled";
         }
 
-        public static string PleaseInsertData()
+        public static string PleaseAnswerAlltheQuestions()
         {
-            return "Please Enter Data First";
+            return "Please Answer All the Questions";
         }
 
         public static string SelectItemType()

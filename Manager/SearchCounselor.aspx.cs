@@ -93,5 +93,36 @@ namespace Manager
                 lblFeedback.ForeColor = Color.Red;
             }
         }
+
+        protected void btnUpdateApprove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btnsender = sender as Button;
+                GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+
+
+
+                bool Update = new clsCounselor().UpdateCounselorIsAprrovedField(int.Parse(gvCounselors.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                if (Update)
+                {
+                    lblFeedback.ForeColor = Color.Green;
+                    lblFeedback.Text = Feedback.UpdateSuccessfull();
+                    gvCounselors.DataSource = new clsCounselor().SearchCounselor(txtName.Text, txtEmail.Text, txtAddress.Text, txtRegistrationNumber.Text, txtPhoneNumber.Text);
+                    gvCounselors.DataBind();
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.UpdateException();
+                    lblFeedback.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                lblFeedback.Text = Feedback.UpdateException();
+                lblFeedback.ForeColor = Color.Red;
+            }
+        }
     }
 }

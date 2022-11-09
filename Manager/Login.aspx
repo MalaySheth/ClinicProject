@@ -115,10 +115,12 @@
                                 </div>
                                 <!--end::Submit button-->
                                 <!--begin::Sign up-->
-                                <%--<div class="text-gray-500 text-center fw-semibold fs-6">
-                                    Not a Member yet?
-								<a href="../../demo18/dist/authentication/layouts/overlay/sign-up.html" class="link-primary">Sign up</a>
-                                </div>--%>
+                                <div class="text-gray-500 text-center fw-semibold fs-6">
+                                    
+								<a href="../Doctor/Login.aspx" class="link-primary">Doctor</a>&nbsp;&nbsp;&nbsp;
+                                    <a href="../Patient/Login.aspx" class="link-primary">Patient</a>&nbsp;&nbsp;&nbsp;
+                                    <a href="../Counselor/Login.aspx" class="link-primary">Counselor</a>
+                                </div>
                                 <!--end::Sign up-->
                             </form>
                             <!--end::Form-->

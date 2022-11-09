@@ -13,7 +13,7 @@ namespace Patient
         {
             if (!IsPostBack)
             {
-                if (Session["Email"] == null)
+                if (Session["PatientId"] == null)
                 {
                     Response.Redirect("~/Login.aspx");
                 }

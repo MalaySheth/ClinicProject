@@ -321,5 +321,65 @@ namespace BLL
                 return false;
             }
         }
+
+        public bool CheckApproveDoctor(int DoctorId, SqlCommand cmd)
+        {
+            try
+            {
+                string sql = string.Format("select IsApproved From Doctors where DoctorsId={0}", DoctorId);
+                cmd.CommandText = sql;
+                return bool.Parse(cmd.ExecuteScalar().ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public bool UpdateDoctorsIsAprrovedField(int doctorId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+                int RowsCount = 0;
+                bool approveStatus = CheckApproveDoctor(doctorId, cmd);
+                string sql = string.Format("Update  Doctors SET IsApproved='{0}' where DoctorsId={1}", !approveStatus, doctorId);
+                int userId = GetUsersIdbyDoctorId(doctorId, cmd);
+                cmd.CommandText = sql;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+                if (RowsCount > 0)
+                {
+                    string sql2 = string.Format("Update  Users SET IsActive='{0}' where UsersId={1}", !approveStatus, userId);
+                    cmd.CommandText = sql2;
+                    RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
+        }
     }
 }

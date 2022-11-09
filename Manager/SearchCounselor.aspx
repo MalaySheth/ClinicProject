@@ -139,7 +139,13 @@
                                                 <asp:BoundField DataField="Adress" HeaderText="Address" />
                                                 <asp:BoundField DataField="creation_datetime" HeaderText="Creation Date" DataFormatString="{0:d/MM/yyyy}"/>
                                                 <asp:CommandField ShowSelectButton="true" SelectText="Edit"  ControlStyle-CssClass="btn btn-success btn-outline-success" /> 
-                                                
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="btnUpdateApprove" runat="server" OnClick="btnUpdateApprove_Click" Text='<%# (bool)Eval("IsApproved") ? "Unapprove":"Approve"%>' CssClass="btn btn-primary btn-outline-primary" ForeColor="Black" />
+
+                                                    </ItemTemplate>
+                                                    
+                                                </asp:TemplateField>
                                             </Columns>
                                             <PagerStyle CssClass="pagination-ys" />
                                             <PagerSettings Mode="NextPrevious" NextPageText="Next" PreviousPageText="Prev" PageButtonCount="6" Position="Bottom" />
