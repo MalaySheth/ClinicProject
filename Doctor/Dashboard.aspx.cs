@@ -11,7 +11,13 @@ namespace Doctor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
         }
     }
 }

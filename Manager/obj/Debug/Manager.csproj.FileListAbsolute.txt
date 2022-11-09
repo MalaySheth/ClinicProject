@@ -73,8 +73,10 @@ C:/Users/hp/source/repos/ClinicProject/Manager/obj/Debug/Manager.pdb
 /Users/amrindersingh/projects/ClinicProject/Manager/bin/DAL.dll
 /Users/amrindersingh/projects/ClinicProject/Manager/bin/BLL.pdb
 /Users/amrindersingh/projects/ClinicProject/Manager/bin/DAL.pdb
-/Users/amrindersingh/projects/ClinicProject/Manager/obj/Debug/Manager.csprojAssemblyReference.cache
 /Users/amrindersingh/projects/ClinicProject/Manager/obj/Debug/Manager.csproj.CoreCompileInputs.cache
 /Users/amrindersingh/projects/ClinicProject/Manager/obj/Debug/Manager.csproj.CopyComplete
 /Users/amrindersingh/projects/ClinicProject/Manager/obj/Debug/Manager.dll
 /Users/amrindersingh/projects/ClinicProject/Manager/obj/Debug/Manager.pdb
+/Users/amrindersingh/projects/ClinicProject/Manager/obj/Debug/Manager.csproj.AssemblyReference.cache
+/Users/amrindersingh/projects/ClinicProject/Manager/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+/Users/amrindersingh/projects/ClinicProject/Manager/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

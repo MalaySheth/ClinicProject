@@ -31,7 +31,6 @@
 /Users/amrindersingh/projects/ClinicProject/Patient/bin/DAL.dll
 /Users/amrindersingh/projects/ClinicProject/Patient/bin/BLL.pdb
 /Users/amrindersingh/projects/ClinicProject/Patient/bin/DAL.pdb
-/Users/amrindersingh/projects/ClinicProject/Patient/obj/Debug/Patient.csprojAssemblyReference.cache
 /Users/amrindersingh/projects/ClinicProject/Patient/obj/Debug/Patient.csproj.CoreCompileInputs.cache
 /Users/amrindersingh/projects/ClinicProject/Patient/obj/Debug/Patient.csproj.CopyComplete
 /Users/amrindersingh/projects/ClinicProject/Patient/obj/Debug/Patient.dll
@@ -78,3 +77,6 @@ C:/Users/hp/source/repos/ClinicProject/Patient/obj/Debug/Patient.csproj.CopyComp
 C:/Users/hp/source/repos/ClinicProject/Patient/obj/Debug/Patient.dll
 C:/Users/hp/source/repos/ClinicProject/Patient/obj/Debug/Patient.pdb
 >>>>>>> af152d24340dc32a701ed0f092b0d1eaf5ee768d
+/Users/amrindersingh/projects/ClinicProject/Patient/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+/Users/amrindersingh/projects/ClinicProject/Patient/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+/Users/amrindersingh/projects/ClinicProject/Patient/obj/Debug/Patient.csproj.AssemblyReference.cache

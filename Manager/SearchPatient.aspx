@@ -1,5 +1,73 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SearchPatient.aspx.cs" Inherits="Manager.SearchPatient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<<<<<<< HEAD
+=======
+        <asp:UpdatePanel ID="UpdatePanel" runat="server">
+            <ContentTemplate>
+                <style type="text/css">
+        .pagination-ys {
+            /*display: inline-block;*/
+            padding-left: 0;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+
+
+            .pagination-ys table > tbody > tr > td {
+                display: inline;
+            }
+
+                .pagination-ys table > tbody > tr > td > a,
+                .pagination-ys table > tbody > tr > td > span {
+                    position: relative;
+                    float: left;
+                    padding: 8px 12px;
+                    line-height: 1.42857143;
+                    text-decoration: none;
+                    color: #dd4814;
+                    background-color: #ffffff;
+                    border: 1px solid #dddddd;
+                    margin-left: -1px;
+                }
+
+                .pagination-ys table > tbody > tr > td > span {
+                    position: relative;
+                    float: left;
+                    padding: 8px 12px;
+                    line-height: 1.42857143;
+                    text-decoration: none;
+                    margin-left: -1px;
+                    z-index: 2;
+                    color: #aea79f;
+                    background-color: #f5f5f5;
+                    border-color: #dddddd;
+                    cursor: default;
+                }
+
+                .pagination-ys table > tbody > tr > td:first-child > a,
+                .pagination-ys table > tbody > tr > td:first-child > span {
+                    margin-left: 0;
+                    border-bottom-left-radius: 4px;
+                    border-top-left-radius: 4px;
+                }
+
+                .pagination-ys table > tbody > tr > td:last-child > a,
+                .pagination-ys table > tbody > tr > td:last-child > span {
+                    border-bottom-right-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+
+                .pagination-ys table > tbody > tr > td > a:hover,
+                .pagination-ys table > tbody > tr > td > span:hover,
+                .pagination-ys table > tbody > tr > td > a:focus,
+                .pagination-ys table > tbody > tr > td > span:focus {
+                    color: #97310e;
+                    background-color: #eeeeee;
+                    border-color: #dddddd;
+                }
+    </style>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
 <!--begin::First Container-->
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
     <!--begin::Post-->
@@ -28,7 +96,13 @@
                                                     </svg>
                                                 </span>
                                     <!--end::Svg Icon-->
+<<<<<<< HEAD
                                     <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10" name="email" value="" placeholder="Email"/>
+=======
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10"  placeholder="Email"/>
+                                    <br /> 
+                                    <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin:Action-->
@@ -51,11 +125,21 @@
                             <!--end::Separator-->
                             <!--begin::Row-->
                             <div class="row g-8 mb-8" data-select2-id="select2-data-205-lbkk">
+<<<<<<< HEAD
+=======
+                                 <!--begin::Col-->
+                                <div class="col-md-6">
+                                    <label class="fs-6 form-label fw-bold text-dark">Name</label>
+                                    <asp:TextBox ID="txtName" runat="server" class="form-control form-control form-control-solid" name="city" />
+                                </div>
+                                <!--end::Col-->
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
                                 <!--begin::Col-->
                                 <div class="col-md-6">
                                     <label class="fs-6 form-label fw-bold text-dark">Phone Number</label>
                                     <asp:TextBox ID="txtPhoneNumber" runat="server" class="form-control form-control form-control-solid" name="city" />
                                 </div>
+<<<<<<< HEAD
                                 <!--end::Col-->
                                 <!--begin::Col-->
                                 <div class="col-md-6" data-select2-id="select2-data-204-g84k">
@@ -89,6 +173,14 @@
                                         <!--end::Col-->
                                     </div>
                                     <!--end::Row-->
+=======
+                                
+                                <!--end::Col-->
+                                <!--begin::Col-->
+                                <div class="col-md-6">
+                                    <label class="fs-6 form-label fw-bold text-dark">Address</label>
+                                    <asp:TextBox ID="txtAddress" runat="server" class="form-control form-control form-control-solid" name="city" />
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
                                 </div>
                                 <!--end::Col-->
                             </div>
@@ -113,7 +205,11 @@
 
 
 <div class="container">
+<<<<<<< HEAD
     <asp:Button ID="btnAddNewDoctor" runat="server" OnClick="btnAddNewDoctor_Click" class="btn btn-bg-smorange btn-color-white float-end mx-2" style="border-radius: 14px" Text="Add New Doctor" />
+=======
+    <a href="AddPatient.aspx" class="btn btn-bg-smorange btn-color-white float-end mx-2" style="border-radius: 14px" >Add New Patient</a>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
 </div>
 
                 <!--begin::Second Container-->
@@ -128,12 +224,17 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 py-5 ">
                                     <h3 class="card-title align-items-start flex-column">
+<<<<<<< HEAD
                                         <span class="card-label fw-bold fs-1 mb-1">All Doctors</span>
+=======
+                                        <span class="card-label fw-bold fs-1 mb-1">All Patients</span>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
                                     </h3>
 
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
+<<<<<<< HEAD
                                     <div class="table-responsive px-8">
                                         <table class="table table-striped border table-row-bordered table-row-gray-1000 border gy-7 gs-7">
                                             <thead style="background-color: #366687;">
@@ -187,6 +288,35 @@
                                             </tbody>
                                         </table>
                                     </div>
+=======
+                                    <asp:GridView ID="gvPatients" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="5" OnPageIndexChanging="gvPatients_PageIndexChanging" OnSelectedIndexChanged="gvPatients_SelectedIndexChanged" EmptyDataText="No Patients Found!">
+                                            <Columns>
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete"  CssClass="btn btn-danger btn-outline-danger" ForeColor="Black" />
+
+                                                    </ItemTemplate>
+                                                    
+                                                </asp:TemplateField>
+                                                <asp:BoundField DataField="FullName" HeaderText="Name" />
+                                                <asp:BoundField DataField="Adress" HeaderText="Address" />
+                                                <asp:BoundField DataField="PostalCode" HeaderText="Postal Code" />
+                                                <asp:BoundField DataField="creation_datetime" HeaderText="Creation Date" DataFormatString="{0:d/MM/yyyy}"/>
+                                                <asp:CommandField ShowSelectButton="true" SelectText="Edit"  ControlStyle-CssClass="btn btn-success btn-outline-success" /> 
+                                                
+                                            </Columns>
+                                            <PagerStyle CssClass="pagination-ys" />
+                                            <PagerSettings Mode="NextPrevious" NextPageText="Next" PreviousPageText="Prev" PageButtonCount="6" Position="Bottom" />
+                                            <EditRowStyle BackColor="#2461BF" />
+                                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                            <HeaderStyle BackColor="#0cb6b9" Font-Bold="True" ForeColor="White" />
+                                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                            <RowStyle BackColor="White" />
+                                            <EmptyDataRowStyle HorizontalAlign="Center" />
+                                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+
+                                        </asp:GridView>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
 
 
                                 <!--end::Body-->
@@ -199,4 +329,9 @@
                     <!--end::Post-->
                 </div>
                 <!--end::Container-->
+<<<<<<< HEAD
+=======
+                </ContentTemplate>
+            </asp:UpdatePanel>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
     </asp:Content>

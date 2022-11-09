@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="AddPatient.aspx.cs" Inherits="Manager.AddPatient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<<<<<<< HEAD
 <!--begin::First Container-->
+=======
+     <asp:UpdatePanel ID="updatepanel" runat="server">
+        <ContentTemplate>
+<!--begin::First Container-->
+            <asp:HiddenField ID="hdfPatientId" runat="server" />
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
   <!--begin::Post-->
   <div class="content flex-row-fluid pb-1" id="kt_content">
@@ -21,13 +28,22 @@
           <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon3" style="width: 18%">Full Name</span>
             <asp:TextBox ID="txtFullName" runat="server" class="form-control" aria-describedby="basic-addon3"/>
+<<<<<<< HEAD
+=======
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator3" ControlToValidate="txtFullName" ErrorMessage="Full Name Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
           </div>
           <!--end::Input group-->
 
           <!--begin::Input group-->
           <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon3" style="width: 18%">Email</span>
+<<<<<<< HEAD
             <asp:TextBox ID="txtEmail" runat="server"class="form-control" aria-describedby="basic-addon3"/>
+=======
+            <asp:TextBox ID="txtEmail" runat="server" class="form-control" aria-describedby="basic-addon3"/>
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator4" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
           </div>
           <!--end::Input group-->
 
@@ -35,6 +51,10 @@
           <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon3" style="width: 18%">Address</span>
             <asp:TextBox ID="txtAddress" runat="server" class="form-control" aria-describedby="basic-addon3"/>
+<<<<<<< HEAD
+=======
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator5" ControlToValidate="txtAddress" ErrorMessage="Address Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
           </div>
           <!--end::Input group-->
 
@@ -42,6 +62,10 @@
           <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon3" style="width: 18%">Postcode</span>
             <asp:TextBox ID="txtPostCode" runat="server" class="form-control" aria-describedby="basic-addon3"/>
+<<<<<<< HEAD
+=======
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator6" ControlToValidate="txtPostcode" ErrorMessage="Postal Code Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
           </div>
           <!--end::Input group-->
 
@@ -49,12 +73,17 @@
             <div class="input-group mb-5">
                 <span class="input-group-text" id="basic-addon3" style="width: 18%">Phone Number</span>
                 <asp:TextBox ID="txtPhoneNumber" runat="server" class="form-control" aria-describedby="basic-addon3"/>
+<<<<<<< HEAD
+=======
+                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator7" ControlToValidate="txtPhoneNumber" ErrorMessage="Phone Number Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
             </div>
             <!--end::Input group-->
 
           <!--begin::Input group-->
           <div class="input-group mb-5">
             <span class="input-group-text" id="txtBirthDatespan" style="width: 18%">Date of Birth</span>
+<<<<<<< HEAD
             <asp:TextBox ID="txtDateOfBirth" runat="server" class="form-control" id="txtBirthDate" aria-describedby="birthDate"/>
           </div>
           <!--end::Input group-->
@@ -62,17 +91,39 @@
           <div class="input-group mb-5">
             <span class="input-group-text" id="basic-addon3" style="width: 18%">Password</span>
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" AutoCompleteType="None" class="form-control" aria-describedby="basic-addon3"/>
+=======
+            <asp:TextBox ID="txtDateOfBirth" runat="server" TextMode="Date" class="form-control" aria-describedby="birthDate"/>
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator8" ControlToValidate="txtDateofBirth" ErrorMessage="Date of Birth Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+          </div>
+          <!--end::Input group-->
+          <!--begin::Input group-->
+            <asp:Panel ID="pnlPassword" runat="server">
+              
+          <div class="input-group mb-5">
+            <span class="input-group-text" id="basic-addon3" style="width: 18%">Password</span>
+            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" AutoCompleteType="None" class="form-control" aria-describedby="basic-addon3"/>
+            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator9" ControlToValidate="txtPassword" ErrorMessage="Password Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
           </div>
 
             <div class="input-group mb-5">
                 <span class="input-group-text" id="basic-addon3" style="width: 18%">Confirm Password</span>
                 <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" AutoCompleteType="None" class="form-control" aria-describedby="basic-addon3"/>
+<<<<<<< HEAD
             </div>
 
             <div class="input-group mb-5">
                 <span class="input-group-text" id="basic-addon3" style="width: 18%">Creation Date</span>
                 <asp:TextBox ID="txtCreationDate" runat="server" class="form-control"  aria-describedby="basic-addon3"/>
             </div>
+=======
+                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator10" ControlToValidate="txtConfirmPassword" Display="Dynamic" ErrorMessage="Please Confirm Password!" ForeColor="Red"></asp:RequiredFieldValidator>
+                 <asp:CompareValidator ID="cv" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Operator="Equal" ErrorMessage="Passwords Does not Match!" ForeColor="Red" Display="Dynamic"></asp:CompareValidator>
+                  </div>
+            </div>
+
+        </asp:Panel>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
           <!--end::Input group-->
 
           <!--begin::Input group-->
@@ -86,8 +137,16 @@
 <!--            </select>-->
 <!--          </div>-->
           <!--end::Input group-->
+<<<<<<< HEAD
 
 
+=======
+            <br />
+            <div class="mb-5">
+               
+                <asp:Label ID="lblFeedback" runat="server" class=""  aria-describedby="basic-addon3"/>
+            </div>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
 
         </div>
         <!--end::Body-->
@@ -109,5 +168,10 @@
 <script>
     $("#txtBirthDate").flatpickr();
 </script>
+<<<<<<< HEAD
+=======
+            </ContentTemplate>
+         </asp:UpdatePanel>
+>>>>>>> 6db3d0a4e0e90759d571b38ffb07f0f9ba27dd2c
  </asp:Content>
 
