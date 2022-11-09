@@ -93,7 +93,7 @@
                                                     </svg>
                                                 </span>
                                     <!--end::Svg Icon-->
-                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10" name="email" value="" placeholder="Email"/>
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10"  placeholder="Email"/>
                                     <br /> 
                                     <asp:Label ID="lblFeedback" runat="server"></asp:Label>
                                 </div>

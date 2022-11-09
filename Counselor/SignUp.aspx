@@ -143,7 +143,7 @@
                                         </div>
                                         <!--end::Wrapper-->
                                         <!--begin::Hint-->
-                                        <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+
                                         <!--end::Hint-->
                                     </div>
                                     <!--end::Input group=-->

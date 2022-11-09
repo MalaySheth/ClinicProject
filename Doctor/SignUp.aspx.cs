@@ -20,7 +20,7 @@ namespace Doctor
         {
             try
             {
-                int UserId = new clsDoctor().InsertDoctors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,"",false,"");
+                int UserId = new clsDoctor().InsertDoctors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,null,false,"");
                 if (UserId > 0)
                 {
                     clear();

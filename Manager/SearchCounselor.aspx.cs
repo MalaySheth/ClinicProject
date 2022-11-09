@@ -13,7 +13,13 @@ namespace Manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -66,7 +72,7 @@ namespace Manager
 
 
 
-                bool Delete = new clsDoctor().DeleteDoctor(int.Parse(gvCounselors.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                bool Delete = new clsCounselor().DeleteCounselor(int.Parse(gvCounselors.DataKeys[gvr.RowIndex].Values[0].ToString()));
                 if (Delete)
                 {
                     lblFeedback.ForeColor = Color.Green;

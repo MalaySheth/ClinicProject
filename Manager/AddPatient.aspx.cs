@@ -16,6 +16,10 @@ namespace Manager
         {
             if (!IsPostBack)
             {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 if (Session["PatientsId"] != null)
                 {
                     int PatientsId = int.Parse(Session["PatientsId"].ToString());

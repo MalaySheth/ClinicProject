@@ -39,7 +39,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToShortDateString()) : (object)DBNull.Value);
 
 
                 sql = string.Format("Insert Into Users(Email,Password,RoleNo,IsActive) values (@Email,@Password,3,'{0}');Select @@Identity as 'Identity'",IsActive);
@@ -108,7 +108,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@IsApproved", IsApproved);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : (object)DBNull.Value);
                 int UsersId = GetUsersIdbyCounselorId(Counselorid,cmd);
                 if (db.cn.State != ConnectionState.Open)
                 {

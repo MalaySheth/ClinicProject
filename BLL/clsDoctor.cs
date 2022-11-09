@@ -39,7 +39,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : (object)DBNull.Value);
 
 
                 sql = string.Format("Insert Into Users(Email,Password,RoleNo,IsActive) values (@Email,@Password,2,'{0}');Select @@Identity as 'Identity'", IsActive);
@@ -102,12 +102,12 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@FullName", FullName);
                 cmd.Parameters.AddWithValue("@Adress", Adress);
                 cmd.Parameters.AddWithValue("@PostalCode", PostalCode);
-                cmd.Parameters.AddWithValue("@DateOfBirth", Birthdate);
+                cmd.Parameters.AddWithValue("@DateOfBirth", DatabaseClass.FormatDateArEgMDY(DateTime.Parse(Birthdate).ToShortDateString()));
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToShortDateString()) : (object)DBNull.Value);
                 int UsersId = GetUsersIdbyDoctorId(Doctorid,cmd);
                 if (db.cn.State != ConnectionState.Open)
                 {

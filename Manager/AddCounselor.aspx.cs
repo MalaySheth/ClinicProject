@@ -16,6 +16,10 @@ namespace Manager
         {
             if(!IsPostBack)
             {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 if (Session["CounselorsId"] != null)
                 {
                     int CounselorsId = int.Parse(Session["CounselorsId"].ToString());
@@ -23,7 +27,15 @@ namespace Manager
                     DataTable dtCounselors = new clsCounselor().GetCounselorInfoByCounselorId(CounselorsId);
                     DataRow dr = dtCounselors.Rows[0];
                     txtDateOfBirth.Text = DateTime.Parse(dr["DateOfBirth"].ToString()).ToString("yyyy-MM-dd");
-                    txtRegistrationApprovalDate.Text = DateTime.Parse(dr["Registration_Approval_DateTime"].ToString()).ToShortDateString();
+                    if(string.IsNullOrEmpty(dr["Registration_Approval_DateTime"].ToString()))
+                    {
+                        txtRegistrationApprovalDate.Text = DateTime.Now.ToShortDateString();
+                    }
+                    else
+                    {
+                        txtRegistrationApprovalDate.Text = DateTime.Parse(dr["Registration_Approval_DateTime"].ToString()).ToShortDateString();
+                    }
+                    
                     txtAddress.Text = dr["Adress"].ToString();
                     txtConfirmPassword.Text = dr["Password"].ToString();
                     txtPassword.Text = dr["Password"].ToString();
@@ -38,7 +50,7 @@ namespace Manager
                     RequiredFieldValidator11.Enabled = false;
                     cv.Enabled = false;
                     Session.Remove("CounselorsId");
-
+                    txtRegistrationApprovalDate.Text = DateTime.Now.ToShortDateString();
                 }
                 else
                 {
@@ -54,7 +66,7 @@ namespace Manager
             {
                 if (btnAddCounsellor.Text != "Update")
                 {
-                    int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostCode.Text, txtDateOfBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text, chkApproved.Checked, DateTime.Now.ToString(), true, txtRegistrationNumber.Text);
+                    int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostCode.Text, txtDateOfBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text, chkApproved.Checked, DateTime.Now.ToString(), chkApproved.Checked, txtRegistrationNumber.Text);
                     if(UserId>0)
                     {
                         Clear();
@@ -70,7 +82,7 @@ namespace Manager
                 else
                 {
                     int CounselorId = int.Parse(hdfCounselorId.Value);
-                    bool Update = new clsCounselor().UpdateCounselors(txtFullName.Text, txtAddress.Text, txtPostCode.Text, txtDateOfBirth.Text, txtPhoneNumber.Text, txtEmail.Text, true, chkApproved.Checked,txtRegistrationApprovalDate.Text, txtRegistrationNumber.Text,CounselorId);
+                    bool Update = new clsCounselor().UpdateCounselors(txtFullName.Text, txtAddress.Text, txtPostCode.Text, txtDateOfBirth.Text, txtPhoneNumber.Text, txtEmail.Text, chkApproved.Checked, chkApproved.Checked,txtRegistrationApprovalDate.Text, txtRegistrationNumber.Text,CounselorId);
                     if (Update)
                     {
                         Clear();
@@ -118,6 +130,8 @@ namespace Manager
             RequiredFieldValidator9.Enabled = true;
             RequiredFieldValidator10.Enabled = true;
             cv.Enabled = true;
+            txtRegistrationApprovalDate.Text = DateTime.Now.ToShortDateString();
+            chkApproved.Checked = false;
         }
     }
 }
