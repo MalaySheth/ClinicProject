@@ -1,39 +1,17 @@
 ﻿<Properties StartupConfiguration="{27FFDEC9-45A6-4027-BB62-F8603ED4718A}|">
   <MonoDevelop.Ide.ItemProperties.Counselor PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Manager/SearchDoctor.aspx.designer.cs">
-    <Files>
-      <File FileName="Manager/AddDoctor.aspx" Line="51" Column="18" />
-      <File FileName="Manager/AddCounselor.aspx" Line="99" Column="7" />
-      <File FileName="Manager/SearchDoctor.aspx" />
-      <File FileName="Doctor/SignUp.aspx" />
-      <File FileName="Doctor/Login.aspx" />
-      <File FileName="Doctor/Dashboard.aspx" />
-      <File FileName="Manager/AddPatient.aspx" />
-      <File FileName="Manager/Login.aspx" />
-      <File FileName="Manager/SearchCounselor.aspx" />
-      <File FileName="Manager/SearchPatient.aspx" Line="2" Column="1" />
-      <File FileName="Manager/AddPatient.aspx.designer.cs" Line="11" Column="20" />
-      <File FileName="Manager/SearchPatient.aspx.designer.cs" Line="88" Column="1" />
-      <File FileName="Manager/Login.aspx.designer.cs" Line="60" Column="1" />
-      <File FileName="Manager/AddDoctor.aspx.designer.cs" Line="250" Column="1" />
-      <File FileName="Manager/SearchCounselor.aspx.designer.cs" Line="97" Column="1" />
-      <File FileName="Manager/AddCounselor.aspx.designer.cs" Line="250" Column="1" />
-      <File FileName="Manager/SearchDoctor.aspx.designer.cs" Line="12" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ClinicProject" expanded="True">
+            <Node name="BLL" expanded="True" />
+            <Node name="DAL" expanded="True" />
+            <Node name="Doctor" expanded="True" />
             <Node name="Manager" expanded="True">
-              <Node name="AddCounselor.aspx" expanded="True" />
-              <Node name="AddDoctor.aspx" expanded="True" />
-              <Node name="Login.aspx" expanded="True" />
-              <Node name="SearchCounselor.aspx" expanded="True" />
-              <Node name="SearchDoctor.aspx" expanded="True">
-                <Node name="SearchDoctor.aspx.designer.cs" selected="True" />
-              </Node>
-              <Node name="SearchPatient.aspx" expanded="True" />
+              <Node name="SearchDoctor.aspx" selected="True" />
             </Node>
+            <Node name="Patient" expanded="True" />
           </Node>
         </State>
       </Pad>
