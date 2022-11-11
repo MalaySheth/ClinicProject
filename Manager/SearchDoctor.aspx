@@ -237,7 +237,7 @@
                                         </table>
                                     </div>--%>
 
-                                <asp:GridView ID="gvDoctors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="DoctorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="5" OnPageIndexChanging="gvDoctors_PageIndexChanging" OnSelectedIndexChanged="gvDoctors_SelectedIndexChanged" EmptyDataText="No Doctors Found!">
+                                <asp:GridView ID="gvDoctors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="DoctorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvDoctors_PageIndexChanging" OnSelectedIndexChanged="gvDoctors_SelectedIndexChanged" EmptyDataText="No Doctors Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>

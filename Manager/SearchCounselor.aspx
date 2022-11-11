@@ -123,7 +123,7 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
-                            <asp:GridView ID="gvCounselors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="CounselorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="5" OnPageIndexChanging="gvCounselors_PageIndexChanging" OnSelectedIndexChanged="gvCounselors_SelectedIndexChanged" EmptyDataText="No Counselors Found!">
+                            <asp:GridView ID="gvCounselors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="CounselorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvCounselors_PageIndexChanging" OnSelectedIndexChanged="gvCounselors_SelectedIndexChanged" EmptyDataText="No Counselors Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>

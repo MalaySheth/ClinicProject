@@ -2191,6 +2191,8 @@
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
     <Content Include="AddAppointment.aspx" />
+    <Content Include="SearchAppointments.aspx" />
+    <Content Include="ViewSelfAssessment.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -2228,6 +2230,20 @@
     </Compile>
     <Compile Include="AddAppointment.aspx.designer.cs">
       <DependentUpon>AddAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAppointments.aspx.cs">
+      <DependentUpon>SearchAppointments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAppointments.aspx.designer.cs">
+      <DependentUpon>SearchAppointments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSelfAssessment.aspx.cs">
+      <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSelfAssessment.aspx.designer.cs">
+      <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -126,9 +126,9 @@ namespace BLL
             return "No Data Found!";
         }
 
-        public static string NoPermission()
+        public static string NotApproved()
         {
-            return "Sorry ! You Dont have Permission";
+            return "Sorry ! You are not Approved by Manager";
         }
 
         public static string IncorrectUsernameOrPassword()
@@ -256,11 +256,11 @@ namespace BLL
 
         public static string CancelSuccesfully()
         {
-            return "Operation is canceled succesfully";
+            return "Appointment is cancelled succesfully";
         }
         public static string CancelException()
         {
-            return "Error: Operation is not canceled";
+            return "Error: Appointment is not cancelled";
         }
 
         public static string PleaseAnswerAlltheQuestions()

@@ -21,8 +21,19 @@ namespace Doctor
             DataTable dt = new clsUsers().Login(txtEmail.Text, txtPassword.Text,2);
             if (dt.Rows.Count > 0)
             {
+                
+
                 DataTable dtDoctors = new clsDoctor().GetDoctorInfoByUserId(int.Parse(dt.Rows[0]["UsersId"].ToString()));
-               
+                bool Approved = new clsDoctor().CheckApproveDoctor(int.Parse(dtDoctors.Rows[0]["DoctorsId"].ToString()));
+
+                if(!Approved)
+                {
+                    lblFeedback.Text = Feedback.NotApproved();
+                    lblFeedback.ForeColor = Color.Red;
+                    return;
+                }
+
+
                 bool update = new clsUsers().UpdateLastLogin(int.Parse(dt.Rows[0]["UsersId"].ToString()));
                 if (update)
                 {

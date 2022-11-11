@@ -26,7 +26,7 @@ namespace Manager
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             lblFeedback.Text = "";
-            gvPatients.DataSource = new clsPatient().SearchPatients(txtName.Text, txtEmail.Text, txtAddress.Text,txtPhoneNumber.Text);
+            gvPatients.DataSource = new clsPatient().SearchPatients(txtName.Text, txtEmail.Text, txtAddress.Text, txtPhoneNumber.Text);
             gvPatients.DataBind();
         }
 

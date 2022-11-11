@@ -196,5 +196,105 @@ namespace BLL
             }
         }
 
+        public DataTable SearchAppointments(string DateFrom, string DateTo,string PatientName,string PhoneNumber)
+        {
+            try
+            {
+                string sql = "", qryDateFrom = "", qryDateTo = "", qrypatientName = "", qryPhoneNumber = "";
+                bool FirstArg = true;
+                if (!string.IsNullOrEmpty(DateFrom))
+                {
+                    if (FirstArg)
+                    {
+                        qryDateFrom = string.Format("where AppointmentDate>='{0}'", DateFrom);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryDateFrom = string.Format("and AppointmentDate>='{0}'", DateFrom);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(DateTo))
+                {
+                    if (FirstArg)
+                    {
+                        qryDateTo = string.Format("where AppointmentDate<='{0}'", DateTo);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryDateTo = string.Format("and AppointmentDate<='{0}'", DateTo);
+                    }
+                }
+                if (!string.IsNullOrEmpty(PatientName))
+                {
+                    if (FirstArg)
+                    {
+                        qrypatientName = string.Format("where PatientName Like'{0}%'", qrypatientName);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qrypatientName = string.Format("and PatientName Like'{0}%'", qrypatientName);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(PhoneNumber))
+                {
+                    if (FirstArg)
+                    {
+                        qryPhoneNumber = string.Format("where PhoneNumber Like '${0}'", qryPhoneNumber);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryPhoneNumber = string.Format("and PhoneNumber Like '%{0}'", qryPhoneNumber);
+                    }
+                }
+
+
+
+
+                sql = string.Format("select * from vwPatientAppointmentInfo {0} {1} {2} {3}", qryDateFrom, qryDateTo,qrypatientName,qryPhoneNumber);
+                return db.ExecuteQuery(sql);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public string GetAssessmentDate(int AppointmentId)
+        {
+            try
+            {
+                string sql = string.Format("select AppointmentDate from PatientAppointments where PatientAppointmentsId={0}", AppointmentId);
+                string date = DatabaseClass.FormatDateDMY(DateTime.Parse(db.ExecuteScalar(sql).ToString()));
+                return date;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public DataTable GetAppointmentDetailsbyAppointmentId(int AppointmentId)
+        {
+            try
+            {
+                string sql = string.Format("select * from vwPatientAppointmentInfo where PatientAppointmentsId={0}",AppointmentId);
+                return db.ExecuteQuery(sql);
+            }
+            catch (Exception ex)
+            {
+
+                return new DataTable();
+            }
+        }
+
     }
 }

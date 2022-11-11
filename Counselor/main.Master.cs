@@ -14,7 +14,7 @@ namespace Counselor
             if (!IsPostBack)
             {
 
-                if (Session["Email"] == null)
+                if (Session["CounselorId"] == null)
                 {
                     Response.Redirect("~/Login.aspx");
                 }
