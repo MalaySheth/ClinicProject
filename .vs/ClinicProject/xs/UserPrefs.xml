@@ -5,13 +5,8 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ClinicProject" expanded="True">
-            <Node name="BLL" expanded="True" />
-            <Node name="DAL" expanded="True" />
+            <Node name="Solution Items" selected="True" />
             <Node name="Doctor" expanded="True" />
-            <Node name="Manager" expanded="True">
-              <Node name="SearchDoctor.aspx" selected="True" />
-            </Node>
-            <Node name="Patient" expanded="True" />
           </Node>
         </State>
       </Pad>
