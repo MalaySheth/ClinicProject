@@ -160,7 +160,8 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
-                            <asp:GridView ID="gvPatientAppointment" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatientAppointment_PageIndexChanging" OnSelectedIndexChanged="gvPatientAppointment_SelectedIndexChanged" EmptyDataText="No Appointments Found!">
+                            <center>
+                            <asp:GridView ID="gvPatientAppointment" runat="server" Width="90%" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatientAppointment_PageIndexChanging" OnSelectedIndexChanged="gvPatientAppointment_SelectedIndexChanged" EmptyDataText="No Appointments Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -178,7 +179,7 @@
 
                                                 <asp:BoundField DataField="AppointmentDate" HeaderText="Date" DataFormatString="{0:d/MM/yyyy}"/>
                                                 <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Date" DataFormatString="{0:d/MM/yyyy}" NullDisplayText="--"/>
-                                                <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Time" DataFormatString="{0:hh:mm:ss tt}" NullDisplayText="--"/>
+                                                <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Time" DataFormatString="{0:hh:mm tt}" NullDisplayText="--"/>
                                                 
                                                 <asp:CommandField ShowSelectButton="true" SelectText="View"  ControlStyle-CssClass="btn btn-warning btn-outline-warning" /> 
                                                 
@@ -195,7 +196,7 @@
 
                                         </asp:GridView>
 
-
+                            </center>
                             <br />
                             <center>
                             <asp:Label ID="lblFeedback" runat="server"></asp:Label>

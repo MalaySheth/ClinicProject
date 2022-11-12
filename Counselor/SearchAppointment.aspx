@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SearchAppointment.aspx.cs" Inherits="Counselor.SearchAppointment" %>
+﻿<%@ Page Title="Search Appointment" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SearchAppointment.aspx.cs" Inherits="Counselor.SearchAppointment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <asp:UpdatePanel ID="UpdatePanel" runat="server">
@@ -193,7 +193,8 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
-                            <asp:GridView ID="gvPatientAppointment" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatientAppointment_PageIndexChanging" OnSelectedIndexChanged="gvPatientAppointment_SelectedIndexChanged" EmptyDataText="No Appointments Found!">
+                            <center>
+                            <asp:GridView ID="gvPatientAppointment" Width="90%" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatientAppointment_PageIndexChanging" OnSelectedIndexChanged="gvPatientAppointment_SelectedIndexChanged" EmptyDataText="No Appointments Found!">
                                             <Columns>
 
                                                 <asp:BoundField DataField="AppointmentCode" HeaderText="Appointment Code" />
@@ -205,7 +206,7 @@
 
                                                 <asp:BoundField DataField="AppointmentDate" HeaderText="Date" DataFormatString="{0:d/MM/yyyy}"/>
                                                 <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Date" DataFormatString="{0:d/MM/yyyy}" NullDisplayText="--"/>
-                                                <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Time" DataFormatString="{0:hh:mm:ss tt}" NullDisplayText="--"/>
+                                                <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Time" DataFormatString="{0:hh:mm tt}" NullDisplayText="--"/>
                                                 
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -214,7 +215,7 @@
 
                                                     </ItemTemplate>
                                                     
-                                                </asp:TemplateField>
+                                                </asp:TemplateField>    
                                                 <asp:CommandField ShowSelectButton="true" SelectText="View"  ControlStyle-CssClass="btn btn-warning btn-outline-warning" /> 
                                             </Columns>
                                             <PagerStyle CssClass="pagination-ys" />
@@ -229,7 +230,7 @@
 
                                         </asp:GridView>
 
-
+                            </center>
                             <br />
                             <center>
                             <asp:Label ID="lblFeedback" runat="server"></asp:Label>

@@ -94,7 +94,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-title">Patient</span>
+                                        <span class="menu-title">Patient Appointments</span>
                                         <span class="menu-arrow"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -103,11 +103,11 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="../../demo18/dist/pages/user-profile/overview.html">
+                                            <a class="menu-link" href="SearchAppointment.aspx">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Add Patient</span>
+                                                <span class="menu-title">View Appointment</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -129,7 +129,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <%--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -176,10 +176,10 @@
 
                                     </div>
                                     <!--end:Menu sub-->
-                                </div>
+                                </div>--%>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                              <%--  <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -226,7 +226,7 @@
                                         <!--end:Menu item-->
                                     </div>
                                     <!--end:Menu sub-->
-                                </div>
+                                </div>--%>
                                 <!--end:Menu item-->
 
 

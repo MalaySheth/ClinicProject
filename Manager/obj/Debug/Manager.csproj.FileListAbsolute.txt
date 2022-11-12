@@ -37,3 +37,4 @@ C:\Users\hp\source\repos\ClinicProject\Manager\obj\Debug\Manager.csproj.CoreComp
 C:\Users\hp\source\repos\ClinicProject\Manager\obj\Debug\Manager.csproj.CopyComplete
 C:\Users\hp\source\repos\ClinicProject\Manager\obj\Debug\Manager.dll
 C:\Users\hp\source\repos\ClinicProject\Manager\obj\Debug\Manager.pdb
+C:\Users\hp\source\repos\ClinicProject\Manager\obj\Debug\Manager.csprojAssemblyReference.cache
