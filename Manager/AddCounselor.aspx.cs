@@ -64,6 +64,12 @@ namespace Manager
         {
             try
             {
+                if (DateTime.Parse(txtDateOfBirth.Text) > DateTime.Now)
+                {
+                    lblFeedback.Text = Feedback.BirthdateGreaterthanTodayError();
+                    lblFeedback.ForeColor = Color.Red;
+                    return;
+                }
                 if (btnAddCounsellor.Text != "Update")
                 {
                     int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostCode.Text, txtDateOfBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text, chkApproved.Checked, DateTime.Now.ToString(), chkApproved.Checked, txtRegistrationNumber.Text);

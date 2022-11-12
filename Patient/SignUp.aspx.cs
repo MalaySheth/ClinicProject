@@ -20,6 +20,12 @@ namespace Patient
         {
             try
             {
+                if (DateTime.Parse(txtDateofBirth.Text) > DateTime.Now)
+                {
+                    lblFeedback.Text = Feedback.BirthdateGreaterthanTodayError();
+                    lblFeedback.ForeColor = Color.Red;
+                    return;
+                }
                 int UserId = new clsPatient().InsertPatients(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text);
                 if(UserId>0)
                 {

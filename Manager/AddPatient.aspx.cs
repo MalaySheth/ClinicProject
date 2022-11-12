@@ -49,7 +49,13 @@ namespace Manager
         {
             try
             {
-                if(btnAddPatient.Text !="Update")
+                if (DateTime.Parse(txtDateOfBirth.Text) > DateTime.Now)
+                {
+                    lblFeedback.Text = Feedback.BirthdateGreaterthanTodayError();
+                    lblFeedback.ForeColor = Color.Red;
+                    return;
+                }
+                if (btnAddPatient.Text !="Update")
                 {
                     int UserId = new clsPatient().InsertPatients(txtFullName.Text, txtAddress.Text, txtPostCode.Text, txtDateOfBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text);
                     if (UserId > 0)

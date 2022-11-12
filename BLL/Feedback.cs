@@ -25,6 +25,10 @@ namespace BLL
         {
             return "Registration Failed!";
         }
+        public static string BirthdateGreaterthanTodayError()
+        {
+            return "Date of Birth can not be later than today!";
+        }
         public static string SendSuccesfully()
         {
             return "The E-mail Message Had Been Sent Successfully!";

@@ -32,131 +32,132 @@
         <!--begin::Main-->
         <asp:UpdatePanel ID="UpdatePanel" runat="server">
             <ContentTemplate>
-            <!--begin::Root-->
-            <div class="d-flex flex-column flex-root">
-                <!--begin::Page bg image-->
-                <style>
-                    body {
-                        background-image: url('assets/media/auth/bg10.jpeg');
-                    }
+                <!--begin::Root-->
+                <div class="d-flex flex-column flex-root">
+                    <!--begin::Page bg image-->
+                    <style>
+                        body {
+                            background-image: url('assets/media/auth/bg10.jpeg');
+                        }
 
-                    [data-theme="dark"] body {
-                        background-image: url('assets/media/auth/bg10-dark.jpeg');
-                    }
-                </style>
-                <!--end::Page bg image-->
-                <!--begin::Authentication - Sign-up -->
-                <div class="d-flex flex-column flex-lg-row flex-column-fluid">
-                    <!--begin::Aside-->
-                    <div class="d-flex flex-lg-row-fluid">
-                        <!--begin::Content-->
-                        <div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
-                            <!--begin::Image-->
-                            <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="assets/media/auth/ill_walk.png" alt="" />
-                            <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="assets/media/auth/agency-dark.png" alt="" />
-                            <!--end::Image-->
-                            <!--begin::Title-->
-                            <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Get an online doctor consultation in minutes</h1>
-                            <!--end::Title-->
-                            <!--begin::Text-->
-                            <div class="text-gray-600 fs-base text-center fw-semibold">
-                                In this kind of post,
-							Connect with doctors online 24/7 and get a diagnosis or prescription in minutes — 91% of medical issues are fully resolved after one visit. With over 350,000 reviews, Canadians coast to coast continue to trust Maple.
-                            </div>
-                            <!--end::Text-->
-                        </div>
-                        <!--end::Content-->
-                    </div>
-                    <!--begin::Aside-->
-                    <!--begin::Body-->
-                    <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
-                        <!--begin::Wrapper-->
-                        <div class="bg-body d-flex flex-center rounded-4 w-md-600px p-10">
+                        [data-theme="dark"] body {
+                            background-image: url('assets/media/auth/bg10-dark.jpeg');
+                        }
+                    </style>
+                    <!--end::Page bg image-->
+                    <!--begin::Authentication - Sign-up -->
+                    <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+                        <!--begin::Aside-->
+                        <div class="d-flex flex-lg-row-fluid">
                             <!--begin::Content-->
-                            <div class="w-md-400px">
-                                <!--begin::Form-->
-                                <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="../../demo18/dist/authentication/layouts/overlay/sign-in.html" action="#">
-                                    <!--begin::Heading-->
-                                    <div class="text-center mb-11">
-                                        <!--begin::Title-->
-                                        <h1 class="text-dark fw-bolder mb-3">Sign Up</h1>
-                                        <!--end::Title-->
-                                    </div>
-                                    <!--begin::Heading-->
-
-                                    <!--begin::Input group=-->
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Email-->
-                                        <asp:TextBox ID="txtFullName" runat="server" placeholder="Full Name" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="rf1" ControlToValidate="txtFullName" ErrorMessage="Name Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <!--end::Email-->
-                                    </div>
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Email-->
-                                        <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <!--end::Email-->
-                                    </div>
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Email-->
-                                        <asp:TextBox ID="txtAddress" runat="server" placeholder="Address" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ControlToValidate="txtAddress" ErrorMessage="Address Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <!--end::Email-->
-                                    </div>
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Email-->
-                                        <asp:TextBox ID="txtPostalcode" runat="server" placeholder="Postalcode" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator3" ControlToValidate="txtPostalcode" ErrorMessage="Postal Code Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <!--end::Email-->
-                                    </div>
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Email-->
-                                        <asp:TextBox ID="txtDateofBirth" runat="server" placeholder="Date of Birth" TextMode="Date" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator4" ControlToValidate="txtDateofBirth" ErrorMessage="Birth Date Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <!--end::Email-->
-                                    </div>
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Email-->
-                                         <asp:TextBox ID="txtPhoneNumber" runat="server" placeholder="Phone number" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator5" ControlToValidate="txtPhoneNumber" ErrorMessage="Phone Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <!--end::Email-->
-                                    </div>
-                                    <!--begin::Input group-->
-                                    <div class="fv-row mb-8" data-kt-password-meter="true">
-                                        <!--begin::Wrapper-->
-                                        <div class="mb-1">
-                                            <!--begin::Input wrapper-->
-                                            <div class="position-relative mb-3">
-                                                <asp:TextBox ID="txtPassword" runat="server"  class="form-control bg-transparent" TextMode="Password" placeholder="Password" name="password" autocomplete="off" >
-                                               </asp:TextBox>
-                                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator6" ControlToValidate="txtPassword" ErrorMessage="Password Required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                            </div>
-                                            <!--end::Input wrapper-->
-                                            <!--begin::Meter-->
-                                            <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
-                                                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                                                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                                                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                                                <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
-                                            </div>
-                                            <!--end::Meter-->
+                            <div class="d-flex flex-column flex-center pb-0 pb-lg-10 p-10 w-100">
+                                <!--begin::Image-->
+                                <img class="theme-light-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="assets/media/auth/ill_walk.png" alt="" />
+                                <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="assets/media/auth/agency-dark.png" alt="" />
+                                <!--end::Image-->
+                                <!--begin::Title-->
+                                <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Get an online doctor consultation in minutes</h1>
+                                <!--end::Title-->
+                                <!--begin::Text-->
+                                <div class="text-gray-600 fs-base text-center fw-semibold">
+                                    In this kind of post,
+							Connect with doctors online 24/7 and get a diagnosis or prescription in minutes — 91% of medical issues are fully resolved after one visit. With over 350,000 reviews, Canadians coast to coast continue to trust Maple.
+                                </div>
+                                <!--end::Text-->
+                            </div>
+                            <!--end::Content-->
+                        </div>
+                        <!--begin::Aside-->
+                        <!--begin::Body-->
+                        <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
+                            <!--begin::Wrapper-->
+                            <div class="bg-body d-flex flex-center rounded-4 w-md-600px p-10">
+                                <!--begin::Content-->
+                                <div class="w-md-400px">
+                                    <!--begin::Form-->
+                                    <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="../../demo18/dist/authentication/layouts/overlay/sign-in.html" action="#">
+                                        <!--begin::Heading-->
+                                        <div class="text-center mb-11">
+                                            <!--begin::Title-->
+                                            <h1 class="text-dark fw-bolder mb-3">Sign Up</h1>
+                                            <!--end::Title-->
                                         </div>
-                                        <!--end::Wrapper-->
-                                        <!--begin::Hint-->
+                                        <!--begin::Heading-->
 
-                                        <!--end::Hint-->
-                                    </div>
-                                    <!--end::Input group=-->
-                                    <!--end::Input group=-->
-                                    <div class="fv-row mb-8">
-                                        <!--begin::Repeat Password-->
-                                        <asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Repeat Password" name="confirm-password" type="password" autocomplete="off" CssClass="form-control bg-transparent" ></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator7" ControlToValidate="txtConfirmPassword" Display="Dynamic" ErrorMessage="Please Confirm Password!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="cv" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Operator="Equal" ErrorMessage="Passwords Does not Match!" ForeColor="Red" Display="Dynamic"></asp:CompareValidator>
-                                         <!--end::Repeat Password-->
-                                    </div>
-                                    <!--end::Input group=-->
-                                    <%--<!--begin::Accept-->
+                                        <!--begin::Input group=-->
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtFullName" runat="server" placeholder="Full Name" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="rf1" ControlToValidate="txtFullName" ErrorMessage="Name Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <!--end::Email-->
+                                        </div>
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" Display="Dynamic" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" Display="Dynamic" ForeColor="Red" ValidationExpression="[\w-\.]+@([\w-]+\.)+[\w-]{2,4}" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+                                            <!--end::Email-->
+                                        </div>
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtAddress" runat="server" placeholder="Address" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ControlToValidate="txtAddress" ErrorMessage="Address Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <!--end::Email-->
+                                        </div>
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtPostalcode" runat="server" placeholder="Postalcode" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator3" ControlToValidate="txtPostalcode" ErrorMessage="Postal Code Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <!--end::Email-->
+                                        </div>
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtDateofBirth" runat="server" placeholder="Date of Birth" TextMode="Date" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator4" ControlToValidate="txtDateofBirth" ErrorMessage="Birth Date Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <!--end::Email-->
+                                        </div>
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtPhoneNumber" runat="server" placeholder="Phone number" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator5" ControlToValidate="txtPhoneNumber" ErrorMessage="Phone Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <!--end::Email-->
+                                        </div>
+                                        <!--begin::Input group-->
+                                        <div class="fv-row mb-8" data-kt-password-meter="true">
+                                            <!--begin::Wrapper-->
+                                            <div class="mb-1">
+                                                <!--begin::Input wrapper-->
+                                                <div class="position-relative mb-3">
+                                                    <asp:TextBox ID="txtPassword" runat="server" class="form-control bg-transparent" TextMode="Password" placeholder="Password" name="password" autocomplete="off">
+                                                    </asp:TextBox>
+                                                    <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator6" ControlToValidate="txtPassword" ErrorMessage="Password Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                </div>
+                                                <!--end::Input wrapper-->
+                                                <!--begin::Meter-->
+                                                <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+                                                    <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                                    <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                                    <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                                    <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+                                                </div>
+                                                <!--end::Meter-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                            <!--begin::Hint-->
+
+                                            <!--end::Hint-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <!--end::Input group=-->
+                                        <div class="fv-row mb-8">
+                                            <!--begin::Repeat Password-->
+                                            <asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Repeat Password" name="confirm-password" type="password" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator7" ControlToValidate="txtConfirmPassword" Display="Dynamic" ErrorMessage="Please Confirm Password!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:CompareValidator ID="cv" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Operator="Equal" ErrorMessage="Passwords Does not Match!" ForeColor="Red" Display="Dynamic"></asp:CompareValidator>
+                                            <!--end::Repeat Password-->
+                                        </div>
+                                        <!--end::Input group=-->
+                                        <%--<!--begin::Accept-->
                                     <div class="fv-row mb-8">
                                         <label class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" name="toc" value="1" />
@@ -166,48 +167,50 @@
                                         </label>
                                     </div>
                                     <!--end::Accept-->--%>
-                                    <!--begin::Submit button-->
-                                    <div class="d-grid mb-10">
-                                        <asp:Label ID="lblFeedback" runat="server"></asp:Label>
-                                        <br />
-                                        <asp:Button id="btnSignup" runat="server" OnClick="btnSignup_Click" CssClass="btn btn-primary" Text="Sign Up">
-                                            
-                                        </asp:Button>
-                                    </div>
-                                    <!--end::Submit button-->
-                                    <!--begin::Sign up-->
-                                    <div class="text-gray-500 text-center fw-semibold fs-6">
-                                        Already have an Account?
+                                        <!--begin::Submit button-->
+                                        <div class="d-grid mb-10">
+                                            <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+                                            <br />
+                                            <asp:Button ID="btnSignup" runat="server" OnClick="btnSignup_Click" CssClass="btn btn-primary" Text="Sign Up"></asp:Button>
+                                        </div>
+                                        <!--end::Submit button-->
+                                        <!--begin::Sign up-->
+                                        <div class="text-gray-500 text-center fw-semibold fs-6">
+                                            Already have an Account?
 							
                                         <a href="Login.aspx" class="link-primary fw-semibold">Sign in</a>
-                                    </div>
-                                    <!--end::Sign up-->
-                                </form>
-                                <!--end::Form-->
+                                        </div>
+                                        <!--end::Sign up-->
+                                    </form>
+                                    <!--end::Form-->
+                                </div>
+                                <!--end::Content-->
                             </div>
-                            <!--end::Content-->
+                            <!--end::Wrapper-->
                         </div>
-                        <!--end::Wrapper-->
+                        <!--end::Body-->
                     </div>
-                    <!--end::Body-->
+                    <!--end::Authentication - Sign-up-->
                 </div>
-                <!--end::Authentication - Sign-up-->
-            </div>
-            <!--end::Root-->
-                </ContentTemplate>
+                <!--end::Root-->
+            </ContentTemplate>
         </asp:UpdatePanel>
         <!--end::Main-->
 
         <!--begin::Javascript-->
         <script>var hostUrl = "assets/";</script>
-         <script type="text/javascript">
+        <script type="text/javascript">
             function HideLabel() {
                 var seconds = 5;
                 setTimeout(function () {
                     document.getElementById("<%=lblFeedback.ClientID %>").style.display = "none";
                 }, seconds * 1000);
             };
+
+          
         </script>
+
+
         <!--begin::Global Javascript Bundle(used by all pages)-->
         <script src="assets/plugins/global/plugins.bundle.js"></script>
         <script src="assets/js/scripts.bundle.js"></script>
