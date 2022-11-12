@@ -226,12 +226,12 @@ namespace BLL
                 {
                     if (FirstArg)
                     {
-                        qryPhoneNumber = string.Format("where PhoneNumber Like '{0}%'", phoneNumber);
+                        qryPhoneNumber = string.Format("where PhoneNumber Like '%{0}'", phoneNumber);
                         FirstArg = false;
                     }
                     else
                     {
-                        qryPhoneNumber = string.Format("and PhoneNumber Like '{0}%'", phoneNumber);
+                        qryPhoneNumber = string.Format("and PhoneNumber Like '%{0}'", phoneNumber);
                     }
                 }
 

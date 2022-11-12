@@ -123,7 +123,7 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
-                            <asp:GridView ID="gvCounselors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="CounselorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="5" OnPageIndexChanging="gvCounselors_PageIndexChanging" OnSelectedIndexChanged="gvCounselors_SelectedIndexChanged" EmptyDataText="No Counselors Found!">
+                            <asp:GridView ID="gvCounselors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="CounselorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvCounselors_PageIndexChanging" OnSelectedIndexChanged="gvCounselors_SelectedIndexChanged" EmptyDataText="No Counselors Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -139,7 +139,13 @@
                                                 <asp:BoundField DataField="Adress" HeaderText="Address" />
                                                 <asp:BoundField DataField="creation_datetime" HeaderText="Creation Date" DataFormatString="{0:d/MM/yyyy}"/>
                                                 <asp:CommandField ShowSelectButton="true" SelectText="Edit"  ControlStyle-CssClass="btn btn-success btn-outline-success" /> 
-                                                
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="btnUpdateApprove" runat="server" OnClick="btnUpdateApprove_Click" Text='<%# (bool)Eval("IsApproved") ? "Unapprove":"Approve"%>' CssClass="btn btn-primary btn-outline-primary" ForeColor="Black" />
+
+                                                    </ItemTemplate>
+                                                    
+                                                </asp:TemplateField>
                                             </Columns>
                                             <PagerStyle CssClass="pagination-ys" />
                                             <PagerSettings Mode="NextPrevious" NextPageText="Next" PreviousPageText="Prev" PageButtonCount="6" Position="Bottom" />

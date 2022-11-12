@@ -22,14 +22,21 @@ namespace Counselor
             if (dt.Rows.Count > 0)
             {
                 DataTable dtCounselor = new clsCounselor().GetCounselorInfoByUserId(int.Parse(dt.Rows[0]["UsersId"].ToString()));
-                
+                bool Approved = new clsCounselor().CheckApproveCounselor(int.Parse(dtCounselor.Rows[0]["CounselorsId"].ToString()));
+
+                if (!Approved)
+                {
+                    lblFeedback.Text = Feedback.NotApproved();
+                    lblFeedback.ForeColor = Color.Red;
+                    return;
+                }
                 bool update = new clsUsers().UpdateLastLogin(int.Parse(dt.Rows[0]["UsersId"].ToString()));
                 if (update)
                 {
                     Session["CounselorId"] = dtCounselor.Rows[0]["CounselorsId"];
                     Session["CounselorName"] = dtCounselor.Rows[0]["FullName"];
                     Session["Email"] = dt.Rows[0]["Email"];
-                    Response.Redirect("~/Dashboard.aspx");
+                    Response.Redirect("Dashboard.aspx");
                 }
                 else
                 {

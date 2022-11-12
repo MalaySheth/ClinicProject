@@ -13,8 +13,18 @@ namespace Manager
         {
             if (!IsPostBack)
             {
+                if(Session["Email"]==null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 lblEmail.Text = Session["Email"].ToString();
             }
+        }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

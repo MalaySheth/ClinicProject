@@ -13,7 +13,13 @@ namespace Manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -66,7 +72,7 @@ namespace Manager
 
 
 
-                bool Delete = new clsDoctor().DeleteDoctor(int.Parse(gvCounselors.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                bool Delete = new clsCounselor().DeleteCounselor(int.Parse(gvCounselors.DataKeys[gvr.RowIndex].Values[0].ToString()));
                 if (Delete)
                 {
                     lblFeedback.ForeColor = Color.Green;
@@ -84,6 +90,37 @@ namespace Manager
             {
 
                 lblFeedback.Text = Feedback.DeleteException();
+                lblFeedback.ForeColor = Color.Red;
+            }
+        }
+
+        protected void btnUpdateApprove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btnsender = sender as Button;
+                GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+
+
+
+                bool Update = new clsCounselor().UpdateCounselorIsAprrovedField(int.Parse(gvCounselors.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                if (Update)
+                {
+                    lblFeedback.ForeColor = Color.Green;
+                    lblFeedback.Text = Feedback.UpdateSuccessfull();
+                    gvCounselors.DataSource = new clsCounselor().SearchCounselor(txtName.Text, txtEmail.Text, txtAddress.Text, txtRegistrationNumber.Text, txtPhoneNumber.Text);
+                    gvCounselors.DataBind();
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.UpdateException();
+                    lblFeedback.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                lblFeedback.Text = Feedback.UpdateException();
                 lblFeedback.ForeColor = Color.Red;
             }
         }

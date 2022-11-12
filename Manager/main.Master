@@ -325,7 +325,7 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="Login.aspx" class="menu-link px-5">Sign Out</a>
+                                                <asp:Button ID="btnSignOut" runat="server" class="menu-link px-5" Text="Sign Out" OnClick="btnSignOut_Click" CausesValidation="false"></asp:Button>
                                             </div>
                                             <!--end::Menu item-->
                                         </div>

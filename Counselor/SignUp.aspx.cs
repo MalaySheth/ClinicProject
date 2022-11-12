@@ -20,6 +20,12 @@ namespace Counselor
         {
             try
             {
+                if (DateTime.Parse(txtDateofBirth.Text) > DateTime.Now)
+                {
+                    lblFeedback.Text = Feedback.BirthdateGreaterthanTodayError();
+                    lblFeedback.ForeColor = Color.Red;
+                    return;
+                }
                 int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,"",false,"");
                 if (UserId > 0)
                 {

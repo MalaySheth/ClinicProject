@@ -14,7 +14,13 @@ namespace Manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
         }
 
      
@@ -87,6 +93,37 @@ namespace Manager
             {
 
                 lblFeedback.Text = Feedback.DeleteException();
+                lblFeedback.ForeColor = Color.Red;
+            }
+        }
+
+        protected void btnUpdateApprove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btnsender = sender as Button;
+                GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+
+
+
+                bool Update = new clsDoctor().UpdateDoctorsIsAprrovedField(int.Parse(gvDoctors.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                if (Update)
+                {
+                    lblFeedback.ForeColor = Color.Green;
+                    lblFeedback.Text = Feedback.UpdateSuccessfull();
+                    gvDoctors.DataSource = new clsDoctor().SearchDoctors(txtName.Text, txtEmail.Text, txtAddress.Text, txtRegistrationNumber.Text, txtPhoneNumber.Text);
+                    gvDoctors.DataBind();
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.UpdateException();
+                    lblFeedback.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                lblFeedback.Text = Feedback.UpdateException();
                 lblFeedback.ForeColor = Color.Red;
             }
         }

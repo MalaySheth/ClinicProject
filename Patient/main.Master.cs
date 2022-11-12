@@ -13,9 +13,20 @@ namespace Patient
         {
             if (!IsPostBack)
             {
+                if (Session["PatientId"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+
                 lblName.Text = Session["PatientName"].ToString();
                 lblEmail.Text = Session["Email"].ToString();
             }
+        }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

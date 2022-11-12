@@ -94,7 +94,8 @@
                                     <div class="fv-row mb-8">
                                         <!--begin::Email-->
                                         <asp:TextBox ID="txtEmail" runat="server" placeholder="Email" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
-                                        <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                       <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" Display="Dynamic" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+              <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" Display="Dynamic" ForeColor="Red" ValidationExpression="[\w-\.]+@([\w-]+\.)+[\w-]{2,4}" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
                                         <!--end::Email-->
                                     </div>
                                     <div class="fv-row mb-8">
@@ -143,7 +144,7 @@
                                         </div>
                                         <!--end::Wrapper-->
                                         <!--begin::Hint-->
-                                        <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+
                                         <!--end::Hint-->
                                     </div>
                                     <!--end::Input group=-->

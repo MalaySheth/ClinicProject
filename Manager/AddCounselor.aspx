@@ -42,7 +42,8 @@
                                 <div class="input-group mb-5">
                                     <span class="input-group-text" id="basic-addon3" style="width: 18%">Email</span>
                                     <asp:TextBox ID="txtEmail" runat="server" class="form-control" aria-describedby="basic-addon3" />
-                                    <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator5" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                   <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" Display="Dynamic" ControlToValidate="txtEmail" ErrorMessage="Email Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+              <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" Display="Dynamic" ForeColor="Red" ValidationExpression="[\w-\.]+@([\w-]+\.)+[\w-]{2,4}" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
                                 </div>
                                 <!--end::Input group-->
 

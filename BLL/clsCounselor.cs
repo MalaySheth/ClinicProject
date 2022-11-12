@@ -39,7 +39,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToShortDateString()) : (object)DBNull.Value);
 
 
                 sql = string.Format("Insert Into Users(Email,Password,RoleNo,IsActive) values (@Email,@Password,3,'{0}');Select @@Identity as 'Identity'",IsActive);
@@ -108,7 +108,7 @@ namespace BLL
                 cmd.Parameters.AddWithValue("@IsApproved", IsApproved);
                 cmd.Parameters.AddWithValue("@RegistrationNumber", RegistrationNumber);
 
-                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : Registration_Approval_DateTime);
+                cmd.Parameters.AddWithValue("@Registration_Approval_DateTime", IsApproved ? DatabaseClass.FormatDateTimeArEgMDY(DateTime.Parse(Registration_Approval_DateTime).ToString()) : (object)DBNull.Value);
                 int UsersId = GetUsersIdbyCounselorId(Counselorid,cmd);
                 if (db.cn.State != ConnectionState.Open)
                 {
@@ -226,12 +226,12 @@ namespace BLL
                 {
                     if (FirstArg)
                     {
-                        qryPhoneNumber = string.Format("where PhoneNumber Like '{0}%'", phoneNumber);
+                        qryPhoneNumber = string.Format("where PhoneNumber Like '%{0}'", phoneNumber);
                         FirstArg = false;
                     }
                     else
                     {
-                        qryPhoneNumber = string.Format("and PhoneNumber Like '{0}%'", phoneNumber);
+                        qryPhoneNumber = string.Format("and PhoneNumber Like '%{0}'", phoneNumber);
                     }
                 }
 
@@ -322,6 +322,82 @@ namespace BLL
         {
             string sql = string.Format("select * From vwFullCounselorInfo where CounselorsId={0}", Counselorid);
             return db.ExecuteQuery(sql);
+        }
+
+        public bool CheckApproveCounselor(int counselorId, SqlCommand cmd)
+        {
+            try
+            {
+                string sql = string.Format("select IsApproved From Counselors where CounselorsId={0}", counselorId);
+                cmd.CommandText = sql;
+                return bool.Parse(cmd.ExecuteScalar().ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public bool CheckApproveCounselor(int Counselorid)
+        {
+            try
+            {
+                string sql = string.Format("select IsApproved From Counselors where CounselorsId={0}", Counselorid);
+
+                return bool.Parse(db.ExecuteScalar(sql).ToString());
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public bool UpdateCounselorIsAprrovedField(int counselorId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+                int RowsCount = 0;
+                bool approveStatus = CheckApproveCounselor(counselorId, cmd);
+                string sql = string.Format("Update  Counselors SET IsApproved='{0}' where CounselorsId={1}", !approveStatus, counselorId);
+                int userId = GetUsersIdbyCounselorId(counselorId, cmd);
+                cmd.CommandText = sql;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+                if (RowsCount > 0)
+                {
+                    string sql2 = string.Format("Update  Users SET IsActive='{0}' where UsersId={1}", !approveStatus, userId);
+                    cmd.CommandText = sql2;
+                    RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
         }
     }
 }

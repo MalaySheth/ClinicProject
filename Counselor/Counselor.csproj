@@ -2190,6 +2190,9 @@
     <Content Include="SignUp.aspx" />
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="SearchAppointment.aspx" />
+    <Content Include="ViewSelfAssessment.aspx" />
+    <Content Include="ContactPatient.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -2220,6 +2223,27 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAppointment.aspx.cs">
+      <DependentUpon>SearchAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAppointment.aspx.designer.cs">
+      <DependentUpon>SearchAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSelfAssessment.aspx.cs">
+      <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSelfAssessment.aspx.designer.cs">
+      <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactPatient.aspx.cs">
+      <DependentUpon>ContactPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactPatient.aspx.designer.cs">
+      <DependentUpon>ContactPatient.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

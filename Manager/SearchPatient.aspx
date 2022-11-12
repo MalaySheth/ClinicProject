@@ -93,7 +93,7 @@
                                                     </svg>
                                                 </span>
                                     <!--end::Svg Icon-->
-                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10" name="email" value="" placeholder="Email"/>
+                                    <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10"  placeholder="Email"/>
                                     <br /> 
                                     <asp:Label ID="lblFeedback" runat="server"></asp:Label>
                                 </div>
@@ -180,7 +180,7 @@
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
-                                    <asp:GridView ID="gvPatients" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="5" OnPageIndexChanging="gvPatients_PageIndexChanging" OnSelectedIndexChanged="gvPatients_SelectedIndexChanged" EmptyDataText="No Patients Found!">
+                                    <asp:GridView ID="gvPatients" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatients_PageIndexChanging" OnSelectedIndexChanged="gvPatients_SelectedIndexChanged" EmptyDataText="No Patients Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>

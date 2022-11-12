@@ -13,13 +13,20 @@ namespace Manager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["Email"] == null)
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
 
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             lblFeedback.Text = "";
-            gvPatients.DataSource = new clsPatient().SearchPatients(txtName.Text, txtEmail.Text, txtAddress.Text,txtPhoneNumber.Text);
+            gvPatients.DataSource = new clsPatient().SearchPatients(txtName.Text, txtEmail.Text, txtAddress.Text, txtPhoneNumber.Text);
             gvPatients.DataBind();
         }
 

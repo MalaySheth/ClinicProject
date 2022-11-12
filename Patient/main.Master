@@ -33,6 +33,7 @@
 </head>
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled">
     <form id="form1" runat="server">
+         <asp:ScriptManager ID="scriptmanager" runat="server"></asp:ScriptManager>
         <script>var defaultThemeMode = "light"; var themeMode; if (document.documentElement) { if (document.documentElement.hasAttribute("data-theme-mode")) { themeMode = document.documentElement.getAttribute("data-theme-mode"); } else { if (localStorage.getItem("data-theme") !== null) { themeMode = localStorage.getItem("data-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-theme", themeMode); }</script>
         <!--end::Theme mode setup on page load-->
         <!--begin::Main-->
@@ -93,7 +94,7 @@
                                             </span>
                                             <!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-title">Patient</span>
+                                        <span class="menu-title">Appointments</span>
                                         <span class="menu-arrow"></span>
                                     </span>
                                     <!--end:Menu link-->
@@ -102,11 +103,11 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="../../demo18/dist/pages/user-profile/overview.html">
+                                            <a class="menu-link" href="AddAppointment.aspx">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Add Patient</span>
+                                                <span class="menu-title">New Appointment</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -114,11 +115,11 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="../../demo18/dist/pages/user-profile/projects.html">
+                                            <a class="menu-link" href="SearchAppointments.aspx">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">View Patient</span>
+                                                <span class="menu-title">View Appointments</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -128,7 +129,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <%--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -175,10 +176,10 @@
 
                                     </div>
                                     <!--end:Menu sub-->
-                                </div>
+                                </div>--%>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <%--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -225,7 +226,7 @@
                                         <!--end:Menu item-->
                                     </div>
                                     <!--end:Menu sub-->
-                                </div>
+                                </div>--%>
                                 <!--end:Menu item-->
 
 
@@ -324,7 +325,7 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="Login.aspx" class="menu-link px-5">Sign Out</a>
+                                                <asp:Button ID="btnSignOut" runat="server" class="menu-link px-5" Text="Sign Out" OnClick="btnSignOut_Click" CausesValidation="false"></asp:Button>
                                             </div>
                                             <!--end::Menu item-->
                                         </div>
