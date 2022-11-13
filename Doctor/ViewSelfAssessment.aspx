@@ -86,10 +86,10 @@
                     <!--begin::Body-->
                     <div class="container mb-5">
                         <div class="row">
-                           <%-- <div class="col">
+                            <div class="col">
                                 <span class="fw-bold fs-5 mb-1">Patient Name:</span>
-                                <span class="fw-bold fs-5 mb-1">John Mickel</span>
-                            </div>--%>
+                              <span class="fw-bold fs-5 mb-1"><asp:Label ID="lblPatientName" runat="server"></asp:Label></span>
+                            </div>
                             <div class="col">
                                 <div class="float-end">
                                     <span class="fw-bold fs-5 mb-1">Assesment Date:</span>

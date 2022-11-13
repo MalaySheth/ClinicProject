@@ -399,6 +399,38 @@ namespace BLL
                 return false;
             }
         }
+
+        public string GetCounselorEmail(int counselorId)
+        {
+            try
+            {
+                string sql = string.Format("select Email From vwFullCounselorInfo where CounselorsId={0}", counselorId);
+
+                return db.ExecuteScalar(sql).ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public string GetCounselorPassword(int counselorId)
+        {
+            try
+            {
+                string sql = string.Format("select Password From vwFullCounselorInfo where CounselorsId={0}", counselorId);
+
+                return db.ExecuteScalar(sql).ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }
 

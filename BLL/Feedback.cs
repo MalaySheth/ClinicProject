@@ -21,6 +21,15 @@ namespace BLL
         {
             return "Registered Successfully!";
         }
+
+        public static string EmailSent()
+        {
+            return "Email Sent Successfully!";
+        }
+        public static string EmailNotSent()
+        {
+            return "Error: Email Not Sent!";
+        }
         public static string RegistrationException()
         {
             return "Registration Failed!";

@@ -1,3 +1,5 @@
+C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\ClinicProject\Counselor\bin\Counselor.dll.config
 C:\Users\hp\source\repos\ClinicProject\Counselor\bin\Counselor.dll
 C:\Users\hp\source\repos\ClinicProject\Counselor\bin\Counselor.pdb
@@ -33,8 +35,6 @@ C:\Users\hp\source\repos\ClinicProject\Counselor\bin\DAL.dll
 C:\Users\hp\source\repos\ClinicProject\Counselor\bin\BLL.pdb
 C:\Users\hp\source\repos\ClinicProject\Counselor\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\hp\source\repos\ClinicProject\Counselor\bin\DAL.pdb
-C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.csprojAssemblyReference.cache
-C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.csproj.CopyComplete
 C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.dll
 C:\Users\hp\source\repos\ClinicProject\Counselor\obj\Debug\Counselor.pdb

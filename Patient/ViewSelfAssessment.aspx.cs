@@ -29,7 +29,7 @@ namespace Patient
                     gvPatientAssessment.DataBind();
 
                     DataTable dtAppointment = new clsAppointment().GetAppointmentDetailsbyAppointmentId(AppointmentId);
-                    lblPatientName.Text = dtAppointment.Rows[0]["PatientName"].ToString();
+                  
                     lblAssessmentDate.Text = new clsAppointment().GetAssessmentDate(AppointmentId);
                     Session.Remove("PatientAppointmentsId");
                 }
