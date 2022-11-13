@@ -196,11 +196,11 @@ namespace BLL
             }
         }
 
-        public DataTable SearchAppointments(string DateFrom, string DateTo,string PatientName,string PhoneNumber, int DoctorId)
+        public DataTable SearchAppointments(string DateFrom, string DateTo,string PatientName,string PhoneNumber, int DoctorId,int PatientNo)
         {
             try
             {
-                string sql = "", qryDateFrom = "", qryDateTo = "", qrypatientName = "", qryPhoneNumber = "", qryDoctorID = "";
+                string sql = "", qryDateFrom = "", qryDateTo = "", qrypatientName = "", qryPhoneNumber = "", qryDoctorID = "", qryPatientID = "";
                 bool FirstArg = true;
                 if (!string.IsNullOrEmpty(DateFrom))
                 {
@@ -249,7 +249,20 @@ namespace BLL
                     }
                     else
                     {
-                        qryDateFrom = string.Format("and DoctorsNo={0}", DoctorId);
+                        qryDoctorID = string.Format("and DoctorsNo={0}", DoctorId);
+                    }
+                }
+
+                if (PatientNo > 0)
+                {
+                    if (FirstArg)
+                    {
+                        qryPatientID = string.Format("where PatientsNo={0}", PatientNo);
+                        FirstArg = false;
+                    }
+                    else
+                    {
+                        qryPatientID = string.Format("and PatientsNo={0}", PatientNo);
                     }
                 }
 

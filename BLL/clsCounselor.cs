@@ -371,7 +371,11 @@ namespace BLL
                 cmd.Transaction = trans;
                 int RowsCount = 0;
                 bool approveStatus = CheckApproveCounselor(counselorId, cmd);
-                string sql = string.Format("Update  Counselors SET IsApproved='{0}' where CounselorsId={1}", !approveStatus, counselorId);
+                string sql = "";
+                if (approveStatus)
+                    sql = string.Format("Update  Counselors SET IsApproved='{0}',Registration_Approval_DateTime=getdate()  where CounselorsId={1}", !approveStatus, counselorId);
+                else
+                    sql = string.Format("Update  Counselors SET IsApproved='{0}'  where CounselorsId={1}", !approveStatus, counselorId);
                 int userId = GetUsersIdbyCounselorId(counselorId, cmd);
                 cmd.CommandText = sql;
                 RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());

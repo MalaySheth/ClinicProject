@@ -26,7 +26,7 @@ namespace Counselor
                     lblFeedback.ForeColor = Color.Red;
                     return;
                 }
-                int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,"",false,"");
+                int UserId = new clsCounselor().InsertCounselors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,"",false,txtRegistrationNumber.Text);
                 if (UserId > 0)
                 {
                     clear();

@@ -29,7 +29,7 @@ namespace Doctor
 
                 lblFeedback.Text = "";
                 gvPatientAppointment.PageIndex = e.NewPageIndex;
-                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, int.Parse(hdfDoctorId.Value));
+                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, int.Parse(hdfDoctorId.Value),0);
                 gvPatientAppointment.DataBind();
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace Doctor
         {
             try
             {
-                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, int.Parse(hdfDoctorId.Value));
+                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, int.Parse(hdfDoctorId.Value),0);
                 gvPatientAppointment.DataBind();
             }
             catch (Exception ex)

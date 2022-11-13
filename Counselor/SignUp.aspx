@@ -83,7 +83,12 @@
                                         <!--end::Title-->
                                     </div>
                                     <!--begin::Heading-->
-
+                                     <div class="fv-row mb-8">
+                                            <!--begin::Email-->
+                                            <asp:TextBox ID="txtRegistrationNumber" runat="server" placeholder="Registration Number" name="name" autocomplete="off" CssClass="form-control bg-transparent"></asp:TextBox>
+                                            <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator8" ControlToValidate="txtRegistrationNumber" ErrorMessage="RegistrationNumber Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <!--end::Email-->
+                                        </div>
                                     <!--begin::Input group=-->
                                     <div class="fv-row mb-8">
                                         <!--begin::Email-->

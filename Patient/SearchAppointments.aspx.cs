@@ -29,7 +29,7 @@ namespace Patient
             {
                 lblFeedback.Text = "";
                 gvPatientAppointment.PageIndex = e.NewPageIndex;
-                DataTable dtAppointment = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, "", "",0);
+                DataTable dtAppointment = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, "", "",0,int.Parse(Session["PatientId"].ToString()));
                 gvPatientAppointment.DataSource = dtAppointment;
                 gvPatientAppointment.DataBind();
             }
@@ -52,7 +52,7 @@ namespace Patient
         {
             try
             {
-                DataTable dtAppointment = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, "", "",0);
+                DataTable dtAppointment = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, "", "",0, int.Parse(Session["PatientId"].ToString()));
                 gvPatientAppointment.DataSource = dtAppointment;
                 gvPatientAppointment.DataBind();
             }

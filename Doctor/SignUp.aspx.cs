@@ -26,7 +26,7 @@ namespace Doctor
                     lblFeedback.ForeColor = Color.Red;
                     return;
                 }
-                int UserId = new clsDoctor().InsertDoctors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,null,false,"");
+                int UserId = new clsDoctor().InsertDoctors(txtFullName.Text, txtAddress.Text, txtPostalcode.Text, txtDateofBirth.Text, txtPhoneNumber.Text, txtPassword.Text, txtEmail.Text,false,null,false,txtRegistrationNumber.Text);
                 if (UserId > 0)
                 {
                     clear();

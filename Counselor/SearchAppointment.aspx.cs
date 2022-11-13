@@ -32,7 +32,7 @@ namespace Counselor
             {
                 lblFeedback.Text = "";
                 gvPatientAppointment.PageIndex = e.NewPageIndex;
-                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text,0);
+                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text,0,0);
                 gvPatientAppointment.DataBind();
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Counselor
         {
             try
             {
-                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text,0);
+                gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, 0, 0);
                 gvPatientAppointment.DataBind();
             }
             catch (Exception ex)
@@ -75,8 +75,8 @@ namespace Counselor
                 if(cancel)
                 {
                     lblFeedback.Text = Feedback.CancelSuccesfully();
-                    lblFeedback.ForeColor = Color.Green;                 
-                    gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text,0);
+                    lblFeedback.ForeColor = Color.Green;
+                    gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, 0, 0);
                     gvPatientAppointment.DataBind();
                 }
                 else
