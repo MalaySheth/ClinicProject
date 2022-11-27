@@ -1,9 +1,0 @@
-C:\Users\hp\source\repos\ClinicProject\BLL\bin\Debug\BLL.dll
-C:\Users\hp\source\repos\ClinicProject\BLL\bin\Debug\BLL.pdb
-C:\Users\hp\source\repos\ClinicProject\BLL\bin\Debug\DAL.dll
-C:\Users\hp\source\repos\ClinicProject\BLL\bin\Debug\DAL.pdb
-C:\Users\hp\source\repos\ClinicProject\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
-C:\Users\hp\source\repos\ClinicProject\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-C:\Users\hp\source\repos\ClinicProject\BLL\obj\Debug\BLL.csproj.CopyComplete
-C:\Users\hp\source\repos\ClinicProject\BLL\obj\Debug\BLL.dll
-C:\Users\hp\source\repos\ClinicProject\BLL\obj\Debug\BLL.pdb
