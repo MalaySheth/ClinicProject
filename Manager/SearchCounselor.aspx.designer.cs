@@ -31,15 +31,6 @@ namespace Manager {
         protected global::System.Web.UI.WebControls.TextBox txtRegistrationNumber;
         
         /// <summary>
-        /// lblFeedback control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFeedback;
-        
-        /// <summary>
         /// btnSearch control.
         /// </summary>
         /// <remarks>
@@ -92,5 +83,14 @@ namespace Manager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCounselors;
+        
+        /// <summary>
+        /// lblFeedback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFeedback;
     }
 }

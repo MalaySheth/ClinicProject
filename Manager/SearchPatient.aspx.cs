@@ -94,5 +94,41 @@ namespace Manager
                 lblFeedback.ForeColor = Color.Red;
             }
         }
+
+        protected void btnReroll_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Button btnsender = sender as Button;
+                GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+
+
+
+                bool Delete = new clsPatient().RerollActivatePatient(int.Parse(gvPatients.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                if (Delete)
+                {
+                    lblFeedback.ForeColor = Color.Green;
+                    lblFeedback.Text = Feedback.UpdateSuccessfull();
+                    gvPatients.DataSource = new clsPatient().SearchPatients(txtName.Text, txtEmail.Text, txtAddress.Text, txtPhoneNumber.Text);
+                    gvPatients.DataBind();
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.UpdateException();
+                    lblFeedback.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception)
+            {
+
+                lblFeedback.Text = Feedback.UpdateException();
+                lblFeedback.ForeColor = Color.Red;
+            }
+
+        }
+
     }
+
+
 }

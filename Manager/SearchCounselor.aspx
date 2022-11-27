@@ -10,7 +10,7 @@
                 <!--begin::Post-->
                 <div class="content flex-row-fluid" id="kt_content">
                     <div class="col-xl-12">
-                        <form action="#">
+                        
                             <!--begin::Card-->
                             <div class="card mb-2">
                                 <!--begin::Card body-->
@@ -34,8 +34,7 @@
                                                 </span>
                                                 <!--end::Svg Icon-->
                                                 <asp:TextBox ID="txtRegistrationNumber" runat="server" class="form-control form-control-solid ps-10" name="email" value="" placeholder="Registration Number" />
-                                                <br />
-                                                <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+                                
                                             </div>
                                             <!--end::Input group-->
                                             <!--begin:Action-->
@@ -93,7 +92,7 @@
                                 <!--end::Card body-->
                             </div>
                             <!--end::Card-->
-                        </form>
+                
                     </div>
                 </div>
             </div>
@@ -123,7 +122,8 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
-                            <asp:GridView ID="gvCounselors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="CounselorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvCounselors_PageIndexChanging" OnSelectedIndexChanged="gvCounselors_SelectedIndexChanged" EmptyDataText="No Counselors Found!">
+                            <center>
+                            <asp:GridView ID="gvCounselors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="CounselorsId" CssClass="table nowrap paginate_button page-item active" BorderStyle="None" Width="90%" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvCounselors_PageIndexChanging" OnSelectedIndexChanged="gvCounselors_SelectedIndexChanged" EmptyDataText="No Counselors Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -159,7 +159,10 @@
 
                                         </asp:GridView>
 
+                                            <br />       <br />
+                                                <asp:Label ID="lblFeedback" runat="server"></asp:Label>
 
+                                </center>
                             <!--end::Body-->
                         </div>
                         <!--end::Search Engine Fourth Container-->

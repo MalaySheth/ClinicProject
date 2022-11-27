@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <center>
-                    <asp:GridView ID="gvPatientAssessment" Width="90%" runat="server" AutoGenerateColumns="False" CellPadding="4" BorderStyle="None" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentAssessmentId" CssClass="table table-striped nowrap paginate_button page-item active" AllowPaging="True" PageSize="10"   EmptyDataText="No Assessment Found!">
+                    <asp:GridView ID="gvPatientAssessment" Width="90%" runat="server" AutoGenerateColumns="False" CellPadding="4" BorderStyle="None" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentAssessmentId" CssClass="table nowrap paginate_button page-item active"   AllowPaging="True" PageSize="10"   EmptyDataText="No Assessment Found!">
                         <Columns>
 
                             <asp:TemplateField HeaderText="Question No.">

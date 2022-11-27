@@ -194,7 +194,7 @@
                             <!--end::Header-->
                             <!--begin::Body-->
                             <center>
-                            <asp:GridView ID="gvPatientAppointment" Width="90%" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatientAppointment_PageIndexChanging" OnSelectedIndexChanged="gvPatientAppointment_SelectedIndexChanged" EmptyDataText="No Appointments Found!">
+                            <asp:GridView ID="gvPatientAppointment" Width="90%" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientAppointmentsId" CssClass="table nowrap paginate_button page-item active" BorderStyle="None"  AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatientAppointment_PageIndexChanging" OnSelectedIndexChanged="gvPatientAppointment_SelectedIndexChanged" EmptyDataText="No Appointments Found!">
                                             <Columns>
 
                                                 <asp:BoundField DataField="AppointmentCode" HeaderText="Appointment Code" />

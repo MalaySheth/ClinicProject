@@ -94,8 +94,7 @@
                                                 </span>
                                     <!--end::Svg Icon-->
                                     <asp:TextBox ID="txtRegistrationNumber" runat="server" class="form-control form-control-solid ps-10" name="email" value="" placeholder="Registration Number" />
-                                    <br /> 
-                                    <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+                                
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin:Action-->
@@ -236,8 +235,8 @@
                                             </tbody>
                                         </table>
                                     </div>--%>
-
-                                <asp:GridView ID="gvDoctors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="DoctorsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvDoctors_PageIndexChanging" OnSelectedIndexChanged="gvDoctors_SelectedIndexChanged" EmptyDataText="No Doctors Found!">
+                                <center>
+                                <asp:GridView ID="gvDoctors" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="DoctorsId" CssClass="table nowrap paginate_button page-item active" BorderStyle="None" Width="90%" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvDoctors_PageIndexChanging" OnSelectedIndexChanged="gvDoctors_SelectedIndexChanged" EmptyDataText="No Doctors Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -272,6 +271,9 @@
                                             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
 
                                         </asp:GridView>
+                                    <br />    <br /> 
+                                    <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+                                    </center>
                                 <!--end::Body-->
                             </div>
                             <!--end::Search Engine Fourth Container-->

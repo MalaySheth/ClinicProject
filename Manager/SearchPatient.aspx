@@ -94,8 +94,7 @@
                                                 </span>
                                     <!--end::Svg Icon-->
                                     <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-solid ps-10"  placeholder="Email"/>
-                                    <br /> 
-                                    <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+                                
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin:Action-->
@@ -180,7 +179,8 @@
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
-                                    <asp:GridView ID="gvPatients" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active table table-striped table-bordered" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatients_PageIndexChanging" OnSelectedIndexChanged="gvPatients_SelectedIndexChanged" EmptyDataText="No Patients Found!">
+                                <center>
+                                    <asp:GridView ID="gvPatients" runat="server" AutoGenerateColumns="False" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" DataKeyNames="PatientsId" CssClass="table table-striped table-bordered nowrap paginate_button page-item active" BorderStyle="None" Width="90%" AllowPaging="True" PageSize="10" OnPageIndexChanging="gvPatients_PageIndexChanging" OnSelectedIndexChanged="gvPatients_SelectedIndexChanged" EmptyDataText="No Patients Found!">
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
@@ -189,12 +189,19 @@
                                                     </ItemTemplate>
                                                     
                                                 </asp:TemplateField>
+                                                <asp:CheckBoxField DataField="IsDeleted" HeaderText="Soft Deleted" />
                                                 <asp:BoundField DataField="FullName" HeaderText="Name" />
                                                 <asp:BoundField DataField="Adress" HeaderText="Address" />
                                                 <asp:BoundField DataField="PostalCode" HeaderText="Postal Code" />
                                                 <asp:BoundField DataField="creation_datetime" HeaderText="Creation Date" DataFormatString="{0:d/MM/yyyy}"/>
                                                 <asp:CommandField ShowSelectButton="true" SelectText="Edit"  ControlStyle-CssClass="btn btn-success btn-outline-success" /> 
-                                                
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="btnReroll" runat="server" OnClick="btnReroll_Click" Text="Re-Roll"  CssClass="btn btn-warning btn-outline-warning" ForeColor="Black" Enabled='<%#(bool)Eval("IsDeleted")?true:false %>' />
+
+                                                    </ItemTemplate>
+                                                    
+                                                </asp:TemplateField>
                                             </Columns>
                                             <PagerStyle CssClass="pagination-ys" />
                                             <PagerSettings Mode="NextPrevious" NextPageText="Next" PreviousPageText="Prev" PageButtonCount="6" Position="Bottom" />
@@ -207,8 +214,9 @@
                                             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
 
                                         </asp:GridView>
-
-
+                                    <br />   <br /> 
+                                    <asp:Label ID="lblFeedback" runat="server"></asp:Label>
+                                    </center>
                                 <!--end::Body-->
                             </div>
                             <!--end::Search Engine Fourth Container-->
