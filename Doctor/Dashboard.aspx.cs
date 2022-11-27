@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace Doctor
 {
@@ -17,6 +18,8 @@ namespace Doctor
                 {
                     Response.Redirect("~/Login.aspx");
                 }
+                LblTotalAppointments.Text = new clsAppointment().GetTotalAppointmentsAssignedToDoctorCount(int.Parse(Session["DoctorId"].ToString())).ToString();
+                LblTotalAssignedPatients.Text = new clsAppointment().GetTotalPatientsAssignedToDoctorCount(int.Parse(Session["DoctorId"].ToString())).ToString();
             }
         }
     }

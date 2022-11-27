@@ -11,5 +11,23 @@ namespace Patient {
     
     
     public partial class Dashboard {
+        
+        /// <summary>
+        /// LblTotalAppointments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTotalAppointments;
+        
+        /// <summary>
+        /// LblTotalVisits control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTotalVisits;
     }
 }

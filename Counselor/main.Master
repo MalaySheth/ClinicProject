@@ -54,9 +54,9 @@
 
 
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <div  class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
-                                    <span class="menu-link">
+                                    <a class="menu-link" href="Dashboard.aspx">
                                         <span class="menu-icon">
                                             <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
                                             <span class="svg-icon svg-icon-2">
@@ -70,7 +70,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <span class="menu-title">Dashboard</span>
-                                    </span>
+                                    </a>
                                     <!--end:Menu link-->
 
 
@@ -262,7 +262,7 @@
                                         </button>
                                         <!--end::Aside toggle-->
                                         <!--begin::Header Logo-->
-                                        <a href="../../demo18/dist/index.html">
+                                        <a href="Dashboard.aspx">
                                             <img alt="Logo" src="assets/media/logos/merilogo.svg" class="h-30px h-lg-35px" />
                                         </a>
                                         <!--end::Header Logo-->
@@ -312,13 +312,13 @@
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="../../demo18/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+                                                <a href="" class="menu-link px-5">My Profile</a>
                                             </div>
                                             <!--end::Menu item-->
 
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="../../demo18/dist/account/statements.html" class="menu-link px-5">Change Password</a>
+                                                <a href="" class="menu-link px-5">Change Password</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->

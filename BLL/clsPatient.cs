@@ -304,6 +304,12 @@ namespace BLL
                 return false;
             }
         }
+
+        public int GetTotalCountOfPatients()
+        {
+            string sql = string.Format("select COUNT(*) From Patients");
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
     }
 }
 

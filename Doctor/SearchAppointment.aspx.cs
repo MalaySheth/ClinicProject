@@ -62,34 +62,41 @@ namespace Doctor
             }
         }
 
-        //protected void btnCancel_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        LinkButton btnsender = sender as LinkButton;
-        //        GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
-        //        bool cancel = new clsAppointment().CancelAppointment(int.Parse(gvPatientAppointment.DataKeys[gvr.RowIndex].Values[0].ToString()));
-        //        if (cancel)
-        //        {
-        //            lblFeedback.Text = Feedback.CancelSuccesfully();
-        //            lblFeedback.ForeColor = Color.Green;
-        //            gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, 0);
-        //            gvPatientAppointment.DataBind();
-        //        }
-        //        else
-        //        {
-        //            lblFeedback.Text = Feedback.CancelException();
-        //            lblFeedback.ForeColor = Color.Red;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LinkButton btnsender = sender as LinkButton;
+                GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+                bool cancel = new clsAppointment().CancelAppointment(int.Parse(gvPatientAppointment.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                if (cancel)
+                {
+                    lblFeedback.Text = Feedback.CancelSuccesfully();
+                    lblFeedback.ForeColor = Color.Green;
+                    gvPatientAppointment.DataSource = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, txtFullName.Text, txtPhoneNumber.Text, int.Parse(hdfDoctorId.Value), 0);
+                    gvPatientAppointment.DataBind();
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.CancelException();
+                    lblFeedback.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
 
-        //        lblFeedback.Text = Feedback.CancelException();
-        //        lblFeedback.ForeColor = Color.Red;
-        //    }
-        //}
+                lblFeedback.Text = Feedback.CancelException();
+                lblFeedback.ForeColor = Color.Red;
+            }
+        }
 
-     
+        protected void btnSchedule_Click(object sender, EventArgs e)
+        {
+            Button btnsender = sender as Button;
+            GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+            Session["PatientAppointmentsId"] = gvPatientAppointment.DataKeys[gvr.RowIndex].Values[0].ToString();
+            string url = "ScheduleAppointment.aspx";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "RedirectHallsCodes", "window.open('" + url + "', '_blank')", true);
+        }
     }
 }

@@ -216,6 +216,14 @@
                                                     </ItemTemplate>
                                                     
                                                 </asp:TemplateField>    
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        
+                                                        <asp:Button ID="btnAssignDoctor" runat="server" OnClick="btnAssignDoctor_Click" Text="Assign Doctor" CssClass="btn btn-success btn-outline-success" />
+
+                                                    </ItemTemplate>
+                                                    
+                                                </asp:TemplateField>    
                                                 <asp:CommandField ShowSelectButton="true" SelectText="View"  ControlStyle-CssClass="btn btn-warning btn-outline-warning" /> 
                                             </Columns>
                                             <PagerStyle CssClass="pagination-ys" />

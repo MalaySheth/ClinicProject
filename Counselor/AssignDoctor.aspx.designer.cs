@@ -7,45 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Manager {
+namespace Counselor {
     
     
-    public partial class Dashboard {
+    public partial class AssignDoctor {
         
         /// <summary>
-        /// LblTotalPatients control.
+        /// lblPatientName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalPatients;
+        protected global::System.Web.UI.WebControls.Label lblPatientName;
         
         /// <summary>
-        /// LblTotalAppointments control.
+        /// lblAssessmentDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalAppointments;
+        protected global::System.Web.UI.WebControls.Label lblAssessmentDate;
         
         /// <summary>
-        /// LblTotalCounselors control.
+        /// hdfPatientAppointmentId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalCounselors;
+        protected global::System.Web.UI.WebControls.HiddenField hdfPatientAppointmentId;
         
         /// <summary>
-        /// LblTotalDoctors control.
+        /// ddlDoctors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalDoctors;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDoctors;
+        
+        /// <summary>
+        /// btnAssign control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAssign;
+        
+        /// <summary>
+        /// lblFeedback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFeedback;
     }
 }

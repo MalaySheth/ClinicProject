@@ -435,6 +435,11 @@ namespace BLL
             }
 
         }
+        public int GetTotalCountOfCounselors()
+        {
+            string sql = string.Format("select COUNT(*) From Counselors");
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
     }
 }
 

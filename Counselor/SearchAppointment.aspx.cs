@@ -101,5 +101,14 @@ namespace Counselor
             string url = "ContactPatient.aspx";
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "RedirectHallsCodes", "window.open('" + url + "', '_blank')", true);
         }
+
+        protected void btnAssignDoctor_Click(object sender, EventArgs e)
+        {
+            Button btnsender = sender as Button;
+            GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
+            Session["PatientAppointmentsId"] = gvPatientAppointment.DataKeys[gvr.RowIndex].Values[0].ToString();
+            string url = "AssignDoctor.aspx";
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "RedirectHallsCodes", "window.open('" + url + "', '_blank')", true);
+        }
     }
 }

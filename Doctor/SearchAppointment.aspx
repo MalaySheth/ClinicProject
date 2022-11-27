@@ -207,15 +207,23 @@
                                                 <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Date" DataFormatString="{0:d/MM/yyyy}" NullDisplayText="--"/>
                                                 <asp:BoundField DataField="Appoint_Scheduled_DateTime" HeaderText="Schedule Time" DataFormatString="{0:hh:mm tt}" NullDisplayText="--"/>
                                                 
-                                                <%--<asp:TemplateField>
+                                                <asp:TemplateField>
                                                     <ItemTemplate>
                                                         <asp:LinkButton ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel"  ForeColor="Blue" Enabled='<%#(bool)Eval("Iscancelled")?false:true %>' />&nbsp;&nbsp;&nbsp;
-                                                        <asp:LinkButton ID="btnContact" runat="server" OnClick="btnContact_Click" Text="Contact"  ForeColor="Blue" />
+                                                      
 
                                                     </ItemTemplate>
                                                     
-                                                </asp:TemplateField>--%>
+                                                </asp:TemplateField>
                                                 <asp:CommandField ShowSelectButton="true" SelectText="View"  ControlStyle-CssClass="btn btn-warning btn-outline-warning" /> 
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:Button ID="btnSchedule" runat="server" OnClick="btnSchedule_Click" Text="Schedule" CssClass="btn btn-success btn-outline-success"  />&nbsp;&nbsp;&nbsp;
+                                                      
+
+                                                    </ItemTemplate>
+                                                    
+                                                </asp:TemplateField>
                                             </Columns>
                                             <PagerStyle CssClass="pagination-ys" />
                                             <PagerSettings Mode="NextPrevious" NextPageText="Next" PreviousPageText="Prev" PageButtonCount="6" Position="Bottom" />

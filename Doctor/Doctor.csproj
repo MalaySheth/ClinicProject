@@ -2192,6 +2192,7 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="SearchAppointment.aspx" />
     <Content Include="ViewSelfAssessment.aspx" />
+    <Content Include="ScheduleAppointment.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -2236,6 +2237,13 @@
     </Compile>
     <Compile Include="ViewSelfAssessment.aspx.designer.cs">
       <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleAppointment.aspx.cs">
+      <DependentUpon>ScheduleAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScheduleAppointment.aspx.designer.cs">
+      <DependentUpon>ScheduleAppointment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

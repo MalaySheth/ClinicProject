@@ -76,6 +76,50 @@ namespace BLL
             }
         }
 
+        public bool AssignDoctortoAppointment(int DoctorId, int Counselorid, int AppointmentId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+                int RowsCount = 0;
+                string sql = string.Format("Update  PatientAppointments SET DoctorsNo={0},CounselorsNo={1},Status='Assigned To Doctor' where PatientAppointmentsId={2}", DoctorId, Counselorid, AppointmentId);
+                cmd.CommandText = sql;
+
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+                if (RowsCount > 0)
+                {
+
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
+        }
+
+   
+
         public DataTable GetSelfAssessmentOfAppointment(int AppointmentId)
         {
             try
@@ -104,7 +148,7 @@ namespace BLL
             }
         }
 
-        public bool AssignPatientAppointmentToDoctor(int PatientAppointmentId, int DoctorId, int CounselorId,string ScheduleDate,string scheduledTime)
+        public bool ScheduleDateTimeOfAssignment(int PatientAppointmentId, string ScheduleDate, string scheduledTime)
         {
             if (db.cn.State != ConnectionState.Open)
             {
@@ -114,12 +158,13 @@ namespace BLL
             SqlTransaction trans = db.cn.BeginTransaction();
             try
             {
-                DateTime ScheduledDatetime = DateTime.ParseExact(ScheduleDate + " " + scheduledTime, "dd/MM/yy h:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime ScheduledDatetime = DateTime.Parse(ScheduleDate + " " + scheduledTime);
+                
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db.cn;
                 cmd.Transaction = trans;
                 int RowsCount = 0;
-                string sql = string.Format("Update  PatientAppointments SET DoctorsNo={0},CounselorsNo={1},Appoint_Scheduled_DateTime='{2}',Status='Scheduled' where PatientAppointmentsId={3}", DoctorId,CounselorId,DatabaseClass.FormatDateTimeArEgMDY(ScheduledDatetime.ToString()),PatientAppointmentId);
+                string sql = string.Format("Update  PatientAppointments SET Appoint_Scheduled_DateTime='{0}',Status='Scheduled' where PatientAppointmentsId={1}",  DatabaseClass.FormatDateTimeArEgMDY(ScheduledDatetime.ToString()), PatientAppointmentId);
                 cmd.CommandText = sql;
                 RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
                 if (RowsCount > 0)
@@ -150,7 +195,7 @@ namespace BLL
                 int rowscount = 0;
                 string sql = string.Format("Update PatientAppointments set Iscancelled='true',Status='Cancelled' where PatientAppointmentsId={0}", AppointmentId);
                 rowscount += int.Parse(db.ExecuteNonQuery(sql).ToString());
-                if(rowscount>0)
+                if (rowscount > 0)
                 {
                     return true;
                 }
@@ -196,7 +241,7 @@ namespace BLL
             }
         }
 
-        public DataTable SearchAppointments(string DateFrom, string DateTo,string PatientName,string PhoneNumber, int DoctorId,int PatientNo)
+        public DataTable SearchAppointments(string DateFrom, string DateTo, string PatientName, string PhoneNumber, int DoctorId, int PatientNo)
         {
             try
             {
@@ -240,7 +285,7 @@ namespace BLL
                     }
                 }
 
-                if (DoctorId>0)
+                if (DoctorId > 0)
                 {
                     if (FirstArg)
                     {
@@ -282,7 +327,7 @@ namespace BLL
 
 
 
-                sql = string.Format("select * from vwPatientAppointmentInfo {0} {1} {2} {3}", qryDateFrom, qryDateTo,qrypatientName,qryPhoneNumber);
+                sql = string.Format("select * from vwPatientAppointmentInfo {0} {1} {2} {3} {4} {5}", qryDateFrom, qryDateTo, qrypatientName, qryPhoneNumber, qryPatientID, qryDoctorID);
                 return db.ExecuteQuery(sql);
 
             }
@@ -312,7 +357,7 @@ namespace BLL
         {
             try
             {
-                string sql = string.Format("select * from vwPatientAppointmentInfo where PatientAppointmentsId={0}",AppointmentId);
+                string sql = string.Format("select * from vwPatientAppointmentInfo where PatientAppointmentsId={0}", AppointmentId);
                 return db.ExecuteQuery(sql);
             }
             catch (Exception ex)
@@ -322,5 +367,45 @@ namespace BLL
             }
         }
 
+        public int GetTotalAppointmentsCount()
+        {
+            string sql = string.Format("select COUNT(*) From PatientAppointments");
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
+        public int GetTotalAppointmentsOfPatientsCount(int patientId)
+        {
+            string sql = string.Format("select COUNT(*) From PatientAppointments where PatientsNo={0}", patientId);
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
+        public int GetTotalAppointmentsAssignedToDoctorCount(int doctorId)
+        {
+            string sql = string.Format("select COUNT(*) From PatientAppointments where DoctorsNo={0}", doctorId);
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
+        public int GetTotalPatientsAssignedToDoctorCount(int doctorId)
+        {
+            string sql = string.Format("select COUNT(distinct PatientsNo) From PatientAppointments where DoctorsNo={0}", doctorId);
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
+        public int GetTotalPatientsAssignedToCounselorsCount(int counselorsId)
+        {
+            string sql = string.Format("select COUNT(distinct PatientsNo) From PatientAppointments where CounselorsNo={0}", counselorsId);
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
+        public int GetTotalVisitsOfPatientCount(int patientId)
+        {
+            string sql = string.Format("select COUNT(*) From PatientAppointments where PatientsNo={0} and status='Scheduled'", patientId);
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+        public int GetTotalPendingAppointmentsCount(int patientId)
+        {
+            string sql = string.Format("select COUNT(*) From PatientAppointments where PatientsNo={0} and status='Requested'", patientId);
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
     }
 }

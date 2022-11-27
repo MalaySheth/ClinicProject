@@ -10,42 +10,51 @@
 namespace Manager {
     
     
-    public partial class Dashboard {
+    public partial class Main {
         
         /// <summary>
-        /// LblTotalPatients control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalPatients;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// LblTotalAppointments control.
+        /// scriptmanager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalAppointments;
+        protected global::System.Web.UI.ScriptManager scriptmanager;
         
         /// <summary>
-        /// LblTotalCounselors control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalCounselors;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// LblTotalDoctors control.
+        /// btnSignOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblTotalDoctors;
+        protected global::System.Web.UI.WebControls.Button btnSignOut;
+        
+        /// <summary>
+        /// ContentPlaceHolder1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }

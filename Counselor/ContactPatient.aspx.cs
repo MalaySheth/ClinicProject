@@ -44,74 +44,74 @@ namespace Counselor
         protected void btnSendEmail_Click(object sender, EventArgs e)
         {
             #region try1
-            //try
-            //{
-            //    string counseloremail = new clsCounselor().GetCounselorEmail(int.Parse(Session["CounselorId"].ToString()));
-            //    string counselorpassword = new clsCounselor().GetCounselorPassword(int.Parse(Session["CounselorId"].ToString()));
-            //    string to = txtEmail.Text; //To address    
-            //    string from = counseloremail; //From address    
-            //    MailMessage message = new MailMessage(from, to);
-
-            //    string mailbody = "In this article you will learn how to send a email using Asp.Net & C#";
-            //    message.Subject = "Sending Email Using Asp.Net & C#";
-            //    message.Body = mailbody;
-            //    message.BodyEncoding = Encoding.UTF8;
-            //    message.IsBodyHtml = true;
-            //    SmtpClient client = new SmtpClient("smtp.zoho.com", 465); //Zoho smtp    
-            //    System.Net.NetworkCredential basicCredential1 = new
-            //    System.Net.NetworkCredential(counseloremail, counselorpassword);
-            //    client.EnableSsl = false;
-            //    client.UseDefaultCredentials = false;
-            //    client.Credentials = basicCredential1;
-            //    try
-            //    {
-            //        client.Send(message);
-            //        lblFeedback.Text = Feedback.EmailSent();
-            //        lblFeedback.ForeColor = Color.Green;
-            //    }
-
-            //    catch (Exception ex)
-            //    {
-            //        lblFeedback.Text =ex.Message;
-            //        lblFeedback.ForeColor = Color.Red;
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    lblFeedback.Text = Feedback.EmailNotSent();
-            //    lblFeedback.ForeColor = Color.Red;
-            //}
-
-            #endregion
             try
             {
                 string counseloremail = new clsCounselor().GetCounselorEmail(int.Parse(Session["CounselorId"].ToString()));
                 string counselorpassword = new clsCounselor().GetCounselorPassword(int.Parse(Session["CounselorId"].ToString()));
-                SmtpClient smtpClient = new SmtpClient("smtp.zoho.com", 465);
+                string to = txtEmail.Text; //To address    
+                string from = counseloremail; //From address    
+                MailMessage message = new MailMessage(from, to);
 
-                smtpClient.Credentials = new System.Net.NetworkCredential(counseloremail, counselorpassword);
-                // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.EnableSsl = true;
-                MailMessage mail = new MailMessage();
+                string mailbody = "In this article you will learn how to send a email using Asp.Net & C#";
+                message.Subject = "Sending Email Using Asp.Net & C#";
+                message.Body = mailbody;
+                message.BodyEncoding = Encoding.UTF8;
+                message.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient("smtp.zoho.com", 465); //Zoho smtp    
+                System.Net.NetworkCredential basicCredential1 = new
+                System.Net.NetworkCredential(counseloremail, counselorpassword);
+                client.EnableSsl = false;
+                client.UseDefaultCredentials = false;
+                client.Credentials = basicCredential1;
+                try
+                {
+                    client.Send(message);
+                    lblFeedback.Text = Feedback.EmailSent();
+                    lblFeedback.ForeColor = Color.Green;
+                }
 
-                //Setting From , To and CC
-                mail.From = new MailAddress(counseloremail, "Zoho");
-                mail.To.Add(new MailAddress(txtEmail.Text));
-                mail.Subject = txtSubject.Text;
-                mail.Body = kt_docs_ckeditor_classic.Text;
-
-                smtpClient.Send(mail);
-                lblFeedback.Text = Feedback.EmailSent();
-                lblFeedback.ForeColor = Color.Green;
+                catch (Exception ex)
+                {
+                    lblFeedback.Text = ex.Message;
+                    lblFeedback.ForeColor = Color.Red;
+                }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 lblFeedback.Text = Feedback.EmailNotSent();
                 lblFeedback.ForeColor = Color.Red;
             }
+
+            #endregion
+            //try
+            //{
+            //    string counseloremail = new clsCounselor().GetCounselorEmail(int.Parse(Session["CounselorId"].ToString()));
+            //    string counselorpassword = new clsCounselor().GetCounselorPassword(int.Parse(Session["CounselorId"].ToString()));
+            //    SmtpClient smtpClient = new SmtpClient("smtp.zoho.com", 465);
+
+            //    smtpClient.Credentials = new System.Net.NetworkCredential(counseloremail, counselorpassword);
+            //    // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
+            //    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //    smtpClient.EnableSsl = true;
+            //    MailMessage mail = new MailMessage();
+
+            //    //Setting From , To and CC
+            //    mail.From = new MailAddress(counseloremail, "Zoho");
+            //    mail.To.Add(new MailAddress(txtEmail.Text));
+            //    mail.Subject = txtSubject.Text;
+            //    mail.Body = kt_docs_ckeditor_classic.Text;
+
+            //    smtpClient.Send(mail);
+            //    lblFeedback.Text = Feedback.EmailSent();
+            //    lblFeedback.ForeColor = Color.Green;
+
+            //}
+            //catch (Exception)
+            //{
+            //    lblFeedback.Text = Feedback.EmailNotSent();
+            //    lblFeedback.ForeColor = Color.Red;
+            //}
 
         }
     }

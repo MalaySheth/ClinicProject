@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,8 @@ namespace Patient
                 {
                     Response.Redirect("~/Login.aspx");
                 }
+                LblTotalAppointments.Text = new clsAppointment().GetTotalAppointmentsOfPatientsCount(int.Parse(Session["PatientId"].ToString())).ToString();
+                LblTotalVisits.Text = new clsAppointment().GetTotalVisitsOfPatientCount(int.Parse(Session["PatientId"].ToString())).ToString();
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,11 @@ namespace Manager
                 {
                     Response.Redirect("~/Login.aspx");
                 }
+                LblTotalAppointments.Text = new clsAppointment().GetTotalAppointmentsCount().ToString();
+                LblTotalCounselors.Text = new clsCounselor().GetTotalCountOfCounselors().ToString();
+                LblTotalDoctors.Text = new clsDoctor().GetTotalCountOfDoctors().ToString();
+                LblTotalPatients.Text = new clsPatient().GetTotalCountOfPatients().ToString();
+
             }
         }
     }

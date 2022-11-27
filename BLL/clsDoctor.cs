@@ -172,7 +172,7 @@ namespace BLL
         {
             try
             {
-                string sql = "select * vwFullDoctorInfo";
+                string sql = "select * from vwFullDoctorInfo";
                 return db.ExecuteQuery(sql);
             }
             catch (Exception)
@@ -402,5 +402,11 @@ namespace BLL
                 return false;
             }
         }
+        public int GetTotalCountOfDoctors()
+        {
+            string sql = string.Format("select COUNT(*) From Doctors");
+            return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
     }
 }

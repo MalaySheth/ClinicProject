@@ -2196,6 +2196,7 @@
     <Content Include="SearchAppointment.aspx" />
     <Content Include="ViewSelfAssessment.aspx" />
     <Content Include="ContactPatient.aspx" />
+    <Content Include="AssignDoctor.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -2247,6 +2248,13 @@
     </Compile>
     <Compile Include="ContactPatient.aspx.designer.cs">
       <DependentUpon>ContactPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignDoctor.aspx.cs">
+      <DependentUpon>AssignDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignDoctor.aspx.designer.cs">
+      <DependentUpon>AssignDoctor.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
