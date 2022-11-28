@@ -259,6 +259,51 @@ namespace BLL
             }
         }
 
+        public DataTable SearchPatientsForDoctorsAndCounselors(string fullName, string email, string adress, string phoneNumber)
+        {
+            try
+            {
+                string sql = "", qryFullName = "", qryAdress = "", qryEmail = "", qryPhoneNumber = "";
+             
+                if (!string.IsNullOrEmpty(fullName))
+                {
+                  
+                        qryFullName = string.Format("and FullName Like'{0}%'", fullName);
+                    
+                }
+
+                if (!string.IsNullOrEmpty(email))
+                {
+                   
+                        qryEmail = string.Format("and Email Like '{0}%'", email);
+                    
+                }
+
+                if (!string.IsNullOrEmpty(phoneNumber))
+                {
+                    
+                        qryPhoneNumber = string.Format("and PhoneNumber Like '%{0}'", phoneNumber);
+                    
+                }
+
+                if (!string.IsNullOrEmpty(adress))
+                {
+                    
+                        qryAdress = string.Format("and Adress like '{0}%'", adress);
+                    
+                }
+
+                sql = string.Format("select * from vwFullPatientInfo where IsDeleted='False' {0} {1} {2} {3}", qryFullName, qryEmail, qryPhoneNumber, qryAdress);
+                return db.ExecuteQuery(sql);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
         public bool HardDeletePatient(int patientsId)
         {
             if (db.cn.State != ConnectionState.Open)
@@ -305,6 +350,97 @@ namespace BLL
             }
         }
 
+        public bool SoftDeletePatient(int patientsId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                int RowsCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+
+                int UserId = GetUsersIdbyPatientId(patientsId, cmd);
+                string sql = string.Format("Update Patients SET IsDeleted='True' where PatientsId={0}", patientsId);
+                cmd.CommandText = sql;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                string sql2 = string.Format("Update Users SET IsActive='False' where UsersId={0}", UserId);
+                cmd.CommandText = sql2;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                if (RowsCount > 0)
+                {
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
+        }
+
+        public bool RerollActivatePatient(int patientsId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                int RowsCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+
+                int UserId = GetUsersIdbyPatientId(patientsId, cmd);
+                string sql = string.Format("Update Patients SET IsDeleted='False' where PatientsId={0}", patientsId);
+                cmd.CommandText = sql;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                string sql2 = string.Format("Update Users SET IsActive='True' where UsersId={0}", UserId);
+                cmd.CommandText = sql2;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                if (RowsCount > 0)
+                {
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
+        }
         public int GetTotalCountOfPatients()
         {
             string sql = string.Format("select COUNT(*) From Patients");

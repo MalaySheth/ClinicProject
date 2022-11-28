@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAppointment" targetNamespace="http://tempuri.org/dsAppointment.xsd" xmlns:mstns="http://tempuri.org/dsAppointment.xsd" xmlns="http://tempuri.org/dsAppointment.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAppointment" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsAppointment" msprop:Generator_UserDSName="dsAppointment">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDoctorAppointments" msprop:Generator_TableClassName="dtDoctorAppointmentsDataTable" msprop:Generator_TableVarName="tabledtDoctorAppointments" msprop:Generator_TablePropName="dtDoctorAppointments" msprop:Generator_RowDeletingName="dtDoctorAppointmentsRowDeleting" msprop:Generator_RowChangingName="dtDoctorAppointmentsRowChanging" msprop:Generator_RowEvHandlerName="dtDoctorAppointmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDoctorAppointmentsRowDeleted" msprop:Generator_UserTableName="dtDoctorAppointments" msprop:Generator_RowChangedName="dtDoctorAppointmentsRowChanged" msprop:Generator_RowEvArgName="dtDoctorAppointmentsRowChangeEvent" msprop:Generator_RowClassName="dtDoctorAppointmentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DoctorName" msprop:Generator_ColumnVarNameInTable="columnDoctorName" msprop:Generator_ColumnPropNameInRow="DoctorName" msprop:Generator_ColumnPropNameInTable="DoctorNameColumn" msprop:Generator_UserColumnName="DoctorName" type="xs:string" minOccurs="0" />
+              <xs:element name="AppointmentDate" msprop:Generator_ColumnVarNameInTable="columnAppointmentDate" msprop:Generator_ColumnPropNameInRow="AppointmentDate" msprop:Generator_ColumnPropNameInTable="AppointmentDateColumn" msprop:Generator_UserColumnName="AppointmentDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AppointmentsCount" msprop:Generator_ColumnVarNameInTable="columnAppointmentsCount" msprop:Generator_ColumnPropNameInRow="AppointmentsCount" msprop:Generator_ColumnPropNameInTable="AppointmentsCountColumn" msprop:Generator_UserColumnName="AppointmentsCount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

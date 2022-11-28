@@ -68,12 +68,31 @@ namespace Patient
         {
             try
             {
+                Button btnsender = sender as Button;
+                GridViewRow gvr = btnsender.NamingContainer as GridViewRow;
 
+
+
+                bool Delete = new clsAppointment().DeleteAppointments(int.Parse(gvPatientAppointment.DataKeys[gvr.RowIndex].Values[0].ToString()));
+                if (Delete)
+                {
+                    lblFeedback.ForeColor = Color.Green;
+                    lblFeedback.Text = Feedback.DeleteSuccessfull();
+                    DataTable dtAppointment = new clsAppointment().SearchAppointments(txtDateFrom.Text, txtDateTo.Text, "", "", 0, int.Parse(Session["PatientId"].ToString()));
+                    gvPatientAppointment.DataSource = dtAppointment;
+                    gvPatientAppointment.DataBind();
+                }
+                else
+                {
+                    lblFeedback.Text = Feedback.DeleteException();
+                    lblFeedback.ForeColor = Color.Red;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                lblFeedback.Text = Feedback.DeleteException();
+                lblFeedback.ForeColor = Color.Red;
             }
         }
     }

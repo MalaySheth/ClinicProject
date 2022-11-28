@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -2186,6 +2189,7 @@
     <Content Include="assets\plugins\global\fonts\line-awesome\la-solid-900.svg" />
     <Content Include="assets\plugins\global\plugins.bundle.css" />
     <Content Include="assets\plugins\global\plugins.bundle.js" />
+    <Content Include="PrintDoctorAppointmentReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Login.aspx" />
@@ -2195,8 +2199,10 @@
     <Content Include="SearchPatient.aspx" />
     <Content Include="SearchDoctor.aspx" />
     <Content Include="SearchCounselor.aspx" />
+    <Content Include="SearchDoctorsAppointments.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsAppointment.Designer.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2210,6 +2216,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDoctorAppointmentReport.aspx.cs">
+      <DependentUpon>PrintDoctorAppointmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintDoctorAppointmentReport.aspx.designer.cs">
+      <DependentUpon>PrintDoctorAppointmentReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dashboard.aspx.cs">
@@ -2240,6 +2253,12 @@
     <Compile Include="AddCounselor.aspx.designer.cs">
       <DependentUpon>AddCounselor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="rptDoctorAppointments1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDoctorAppointments.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SearchPatient.aspx.cs">
       <DependentUpon>SearchPatient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2260,6 +2279,13 @@
     </Compile>
     <Compile Include="SearchCounselor.aspx.designer.cs">
       <DependentUpon>SearchCounselor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDoctorsAppointments.aspx.cs">
+      <DependentUpon>SearchDoctorsAppointments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchDoctorsAppointments.aspx.designer.cs">
+      <DependentUpon>SearchDoctorsAppointments.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2299,6 +2325,13 @@
     <Content Include="assets\plugins\global\fonts\line-awesome\la-solid-900.woff2" />
     <Content Include="assets\plugins\global\sourcemaps\tiny-slider.css.map" />
     <Content Include="Main.Master" />
+    <Content Include="dsAppointment.xsc">
+      <DependentUpon>dsAppointment.xsd</DependentUpon>
+    </Content>
+    <None Include="dsAppointment.xsd" />
+    <Content Include="dsAppointment.xss">
+      <DependentUpon>dsAppointment.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2312,6 +2345,15 @@
       <Project>{f0386afa-ff98-4a32-8969-951559ca22d7}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="rptDoctorAppointments.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDoctorAppointments1.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

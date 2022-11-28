@@ -118,7 +118,52 @@ namespace BLL
             }
         }
 
-   
+        public bool DeleteAppointments(int AppointmentId)
+        {
+            if (db.cn.State != ConnectionState.Open)
+            {
+                db.cn.Open();
+            }
+
+            SqlTransaction trans = db.cn.BeginTransaction();
+            try
+            {
+                int RowsCount = 0;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db.cn;
+                cmd.Transaction = trans;
+
+                
+                string sql = string.Format("delete from PatientAppointmentAssessment where PatientAppointmentsNo={0}", AppointmentId);
+                cmd.CommandText = sql;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                string sql2 = string.Format("delete from PatientAppointments where PatientAppointmentsId={0}", AppointmentId);
+                cmd.CommandText = sql2;
+                RowsCount += int.Parse(cmd.ExecuteNonQuery().ToString());
+
+                if (RowsCount > 0)
+                {
+                    trans.Commit();
+                    db.cn.Close();
+                    return true;
+                }
+                else
+                {
+                    trans.Rollback();
+                    db.cn.Close();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                trans.Rollback();
+                db.cn.Close();
+                return false;
+            }
+        }
+
 
         public DataTable GetSelfAssessmentOfAppointment(int AppointmentId)
         {
@@ -402,10 +447,39 @@ namespace BLL
             string sql = string.Format("select COUNT(*) From PatientAppointments where PatientsNo={0} and status='Scheduled'", patientId);
             return int.Parse(db.ExecuteScalar(sql).ToString());
         }
+
         public int GetTotalPendingAppointmentsCount(int patientId)
         {
             string sql = string.Format("select COUNT(*) From PatientAppointments where PatientsNo={0} and status='Requested'", patientId);
             return int.Parse(db.ExecuteScalar(sql).ToString());
+        }
+
+        public DataTable GetDoctorAppointmentsForReportWithCount(string DateFrom, string DateTo,int DoctorId)
+        {
+            string sql = "", qryDateFrom = "", qryDateTo = "",qryDoctorNo="";
+            
+            if (!string.IsNullOrEmpty(DateFrom))
+            {
+                
+                    qryDateFrom = string.Format("and Appoint_Scheduled_DateTime>='{0}'", DateFrom);
+                
+            }
+
+            if (!string.IsNullOrEmpty(DateTo))
+            {
+             
+                    qryDateTo = string.Format("and Appoint_Scheduled_DateTime<='{0}'", DateTo);
+                
+            }
+            if (DoctorId!=0)
+            {
+
+                qryDoctorNo = string.Format("and DoctorsNo<={0}", DoctorId);
+
+            }
+            sql = string.Format("SELECT DoctorName,DoctorsNo,CAST(Appoint_Scheduled_DateTime AS DATE) as AppointmentDate,count (*) as AppointmentsCount FROM vwPatientAppointmentInfo where DoctorsNo is not null {0} {1}  group by CAST(Appoint_Scheduled_DateTime AS DATE),DoctorsNo,DoctorName",qryDateFrom,qryDateTo);
+
+            return db.ExecuteQuery(sql);
         }
     }
 }
