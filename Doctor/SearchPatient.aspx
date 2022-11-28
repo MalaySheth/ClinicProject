@@ -158,9 +158,7 @@
 <!--begin::First Container-->
 
 
-<div class="container">
-    <a href="AddPatient.aspx" class="btn btn-bg-smorange btn-color-white float-end mx-2" style="border-radius: 14px" >Add New Patient</a>
-</div>
+
 
                 <!--begin::Second Container-->
                 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
