@@ -260,17 +260,27 @@
                                         </div>
                                         <!--end:Menu item-->
                                         <!--begin:Menu item-->
-                                        <%--<div class="menu-item">
+                                        <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="SearchPatient.aspx">
+                                            <a class="menu-link" href="SearchPatientCreations.aspx">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">View Patient</span>
+                                                <span class="menu-title">Patient Registration</span>
                                             </a>
                                             <!--end:Menu link-->
-                                        </div>--%>
-
+                                        </div>
+                                         <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="SeachPatientAssessment.aspx">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Patient Assessment</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
                                     </div>
                                     <!--end:Menu sub-->
                                 </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SearchDoctorsAppointments.aspx.cs" Inherits="Manager.SearchDoctorsAppointments" %>
+﻿<%@ Page Title="Search Doctor Appointment" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SearchDoctorsAppointments.aspx.cs" Inherits="Manager.SearchDoctorsAppointments" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <!--begin::First Container-->
         <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">

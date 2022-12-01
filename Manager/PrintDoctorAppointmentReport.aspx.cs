@@ -44,7 +44,7 @@ namespace Manager
             catch (Exception)
             {
 
-                throw;
+                Page.RegisterStartupScript("close", "<script>self.close();</script>");
             }
         }
     }

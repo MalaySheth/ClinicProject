@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SearchPatient.aspx.cs" Inherits="Counselor.SearchPatient" %>
+﻿<%@ Page Title="Search Patients" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SearchPatient.aspx.cs" Inherits="Counselor.SearchPatient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        <asp:UpdatePanel ID="UpdatePanel" runat="server">
             <ContentTemplate>

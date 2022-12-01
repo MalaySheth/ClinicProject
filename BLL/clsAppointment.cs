@@ -448,9 +448,9 @@ namespace BLL
             return int.Parse(db.ExecuteScalar(sql).ToString());
         }
 
-        public int GetTotalPendingAppointmentsCount(int patientId)
+        public int GetTotalPendingAppointmentsCount()
         {
-            string sql = string.Format("select COUNT(*) From PatientAppointments where PatientsNo={0} and status='Requested'", patientId);
+            string sql = string.Format("select COUNT(*) From PatientAppointments where status='Requested'");
             return int.Parse(db.ExecuteScalar(sql).ToString());
         }
 
@@ -461,14 +461,14 @@ namespace BLL
             if (!string.IsNullOrEmpty(DateFrom))
             {
                 
-                    qryDateFrom = string.Format("and Appoint_Scheduled_DateTime>='{0}'", DateFrom);
+                    qryDateFrom = string.Format("and cast(Appoint_Scheduled_DateTime as date)>='{0}'", DateFrom);
                 
             }
 
             if (!string.IsNullOrEmpty(DateTo))
             {
              
-                    qryDateTo = string.Format("and Appoint_Scheduled_DateTime<='{0}'", DateTo);
+                    qryDateTo = string.Format("and cast(Appoint_Scheduled_DateTime as date)<='{0}'", DateTo);
                 
             }
             if (DoctorId!=0)
@@ -477,9 +477,38 @@ namespace BLL
                 qryDoctorNo = string.Format("and DoctorsNo<={0}", DoctorId);
 
             }
-            sql = string.Format("SELECT DoctorName,DoctorsNo,CAST(Appoint_Scheduled_DateTime AS DATE) as AppointmentDate,count (*) as AppointmentsCount FROM vwPatientAppointmentInfo where DoctorsNo is not null {0} {1}  group by CAST(Appoint_Scheduled_DateTime AS DATE),DoctorsNo,DoctorName",qryDateFrom,qryDateTo);
+            sql = string.Format("SELECT DoctorName,DoctorsNo,CAST(Appoint_Scheduled_DateTime AS DATE) as AppointmentDate,count (*) as AppointmentsCount FROM vwPatientAppointmentInfo where DoctorsNo is not null {0} {1} {2}  group by CAST(Appoint_Scheduled_DateTime AS DATE),DoctorsNo,DoctorName",qryDateFrom,qryDateTo,qryDoctorNo);
 
             return db.ExecuteQuery(sql);
+        }
+
+        public DataTable GetPatientsAssessmentByDate(string DateFrom, string DateTo)
+        {
+            try
+            {
+                string sql = "", qryDateFrom = "", qryDateTo = "";
+                if (!string.IsNullOrEmpty(DateFrom))
+                {
+
+                    qryDateFrom = string.Format("and AppointmentDate>='{0}'", DateFrom);
+
+                }
+
+                if (!string.IsNullOrEmpty(DateTo))
+                {
+
+                    qryDateTo = string.Format("and AppointmentDate<='{0}'", DateTo);
+
+                }
+                sql = string.Format("select COUNT(distinct PatientsNo) as NumberOfPatients, AppointmentDate  from PatientAppointments where Status='Requested' {0} {1} group by AppointmentDate", qryDateFrom, qryDateTo);
+                return db.ExecuteQuery(sql);
+
+            }
+            catch (Exception)
+            {
+
+                return new DataTable();
+            }
         }
     }
 }

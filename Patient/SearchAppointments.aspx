@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SearchAppointments.aspx.cs" Inherits="Patient.SearchAppointments" %>
+﻿<%@ Page Title="Search Appointments" Language="C#" MasterPageFile="~/main.Master" AutoEventWireup="true" CodeBehind="SearchAppointments.aspx.cs" Inherits="Patient.SearchAppointments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="UpdatePanel" runat="server">
@@ -165,7 +165,7 @@
                                             <Columns>
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
-                                                        <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete"  CssClass="btn btn-danger btn-outline-danger" ForeColor="Black" Enabled='<%#Eval("CounselorsNo")==null || (bool)Eval("Iscancelled")?false:true %>' />
+                                                        <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="Delete"  CssClass="btn btn-danger btn-outline-danger" ForeColor="Black" Enabled='<%#Eval("CounselorsNo")!=null || (bool)Eval("Iscancelled")?false:true %>' />
 
                                                     </ItemTemplate>
                                                     

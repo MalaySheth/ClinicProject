@@ -218,7 +218,7 @@
                                                 <asp:CommandField ShowSelectButton="true" SelectText="View"  ControlStyle-CssClass="btn btn-warning btn-outline-warning" /> 
                                                 <asp:TemplateField>
                                                     <ItemTemplate>
-                                                        <asp:Button ID="btnSchedule" runat="server" OnClick="btnSchedule_Click" Text="Schedule" CssClass="btn btn-success btn-outline-success"  />&nbsp;&nbsp;&nbsp;
+                                                        <asp:Button ID="btnSchedule" runat="server" OnClick="btnSchedule_Click" Text="Schedule" CssClass="btn btn-success btn-outline-success" Enabled='<%#(bool)Eval("Iscancelled")?false:true %>'  />&nbsp;&nbsp;&nbsp;
                                                       
 
                                                     </ItemTemplate>

@@ -446,6 +446,35 @@ namespace BLL
             string sql = string.Format("select COUNT(*) From Patients");
             return int.Parse(db.ExecuteScalar(sql).ToString());
         }
+
+        public DataTable GetPatientsCountByCreationDate(string DateFrom,string DateTo)
+        {
+            try
+            {
+                string sql = "", qryDateFrom = "", qryDateTo = "";
+                if (!string.IsNullOrEmpty(DateFrom))
+                {
+
+                    qryDateFrom = string.Format("and cast(creation_datetime as date)>='{0}'", DateFrom);
+
+                }
+
+                if (!string.IsNullOrEmpty(DateTo))
+                {
+
+                    qryDateTo = string.Format("and cast(creation_datetime as date)<='{0}'", DateTo);
+
+                }
+                sql = string.Format("SELECT COUNT(*) as PatientCount,cast(creation_datetime as date) as creation_datetime FROM Users where RoleNo=4 {0} {1} group by cast(creation_datetime as date)", qryDateFrom,qryDateTo);
+                return db.ExecuteQuery(sql);
+
+            }
+            catch (Exception)
+            {
+
+                return new DataTable();
+            }
+        }
     }
 }
 

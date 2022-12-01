@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPatientCreation" targetNamespace="http://tempuri.org/dsPatientCreation.xsd" xmlns:mstns="http://tempuri.org/dsPatientCreation.xsd" xmlns="http://tempuri.org/dsPatientCreation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPatientCreation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPatientCreation" msprop:Generator_UserDSName="dsPatientCreation">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPatientCreation" msprop:Generator_TableClassName="dtPatientCreationDataTable" msprop:Generator_TableVarName="tabledtPatientCreation" msprop:Generator_TablePropName="dtPatientCreation" msprop:Generator_RowDeletingName="dtPatientCreationRowDeleting" msprop:Generator_RowChangingName="dtPatientCreationRowChanging" msprop:Generator_RowEvHandlerName="dtPatientCreationRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPatientCreationRowDeleted" msprop:Generator_UserTableName="dtPatientCreation" msprop:Generator_RowChangedName="dtPatientCreationRowChanged" msprop:Generator_RowEvArgName="dtPatientCreationRowChangeEvent" msprop:Generator_RowClassName="dtPatientCreationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="creation_datetime" msprop:Generator_ColumnVarNameInTable="columncreation_datetime" msprop:Generator_ColumnPropNameInRow="creation_datetime" msprop:Generator_ColumnPropNameInTable="creation_datetimeColumn" msprop:Generator_UserColumnName="creation_datetime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PatientCount" msprop:Generator_ColumnVarNameInTable="columnPatientCount" msprop:Generator_ColumnPropNameInRow="PatientCount" msprop:Generator_ColumnPropNameInTable="PatientCountColumn" msprop:Generator_UserColumnName="PatientCount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

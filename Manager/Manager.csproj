@@ -2190,6 +2190,8 @@
     <Content Include="assets\plugins\global\plugins.bundle.css" />
     <Content Include="assets\plugins\global\plugins.bundle.js" />
     <Content Include="PrintDoctorAppointmentReport.aspx" />
+    <Content Include="PrintPatientAssessment.aspx" />
+    <Content Include="PrintPatientsCreation.aspx" />
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Login.aspx" />
@@ -2200,9 +2202,21 @@
     <Content Include="SearchDoctor.aspx" />
     <Content Include="SearchCounselor.aspx" />
     <Content Include="SearchDoctorsAppointments.aspx" />
+    <Content Include="SearchPatientCreations.aspx" />
+    <Content Include="SeachPatientAssessment.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dsAppointment.Designer.cs" />
+    <Compile Include="dsPatientAssessment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPatientAssessment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPatientCreation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPatientCreation.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2223,6 +2237,20 @@
     </Compile>
     <Compile Include="PrintDoctorAppointmentReport.aspx.designer.cs">
       <DependentUpon>PrintDoctorAppointmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPatientAssessment.aspx.cs">
+      <DependentUpon>PrintPatientAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintPatientAssessment.aspx.designer.cs">
+      <DependentUpon>PrintPatientAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPatientsCreation.aspx.cs">
+      <DependentUpon>PrintPatientsCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintPatientsCreation.aspx.designer.cs">
+      <DependentUpon>PrintPatientsCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dashboard.aspx.cs">
@@ -2259,6 +2287,18 @@
       <DependentUpon>rptDoctorAppointments.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptPatientAssessment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPatientAssessment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPatientCreation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPatientCreation.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SearchPatient.aspx.cs">
       <DependentUpon>SearchPatient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2286,6 +2326,20 @@
     </Compile>
     <Compile Include="SearchDoctorsAppointments.aspx.designer.cs">
       <DependentUpon>SearchDoctorsAppointments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPatientCreations.aspx.cs">
+      <DependentUpon>SearchPatientCreations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPatientCreations.aspx.designer.cs">
+      <DependentUpon>SearchPatientCreations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeachPatientAssessment.aspx.cs">
+      <DependentUpon>SeachPatientAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeachPatientAssessment.aspx.designer.cs">
+      <DependentUpon>SeachPatientAssessment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2332,6 +2386,28 @@
     <Content Include="dsAppointment.xss">
       <DependentUpon>dsAppointment.xsd</DependentUpon>
     </Content>
+    <Content Include="dsPatientCreation.xsc">
+      <DependentUpon>dsPatientCreation.xsd</DependentUpon>
+    </Content>
+    <Content Include="dsPatientAssessment.xsc">
+      <DependentUpon>dsPatientAssessment.xsd</DependentUpon>
+    </Content>
+    <None Include="dsPatientAssessment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPatientAssessment.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="dsPatientAssessment.xss">
+      <DependentUpon>dsPatientAssessment.xsd</DependentUpon>
+    </Content>
+    <None Include="dsPatientCreation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPatientCreation.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="dsPatientCreation.xss">
+      <DependentUpon>dsPatientCreation.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2350,6 +2426,14 @@
     <EmbeddedResource Include="rptDoctorAppointments.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDoctorAppointments1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPatientAssessment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPatientAssessment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPatientCreation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPatientCreation.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

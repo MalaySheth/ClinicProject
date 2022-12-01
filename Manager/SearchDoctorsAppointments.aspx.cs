@@ -20,6 +20,8 @@ namespace Manager
                 }
                 ddlDoctors.DataSource = new clsDoctor().GetAllDoctors();
                 ddlDoctors.DataBind();
+                txtDateFrom.Text = DateTime.Now.ToString("yyyy-MM-dd"); 
+                txtDateTo.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
