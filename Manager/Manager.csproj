@@ -2204,6 +2204,8 @@
     <Content Include="SearchDoctorsAppointments.aspx" />
     <Content Include="SearchPatientCreations.aspx" />
     <Content Include="SeachPatientAssessment.aspx" />
+    <Content Include="SearchAppointment.aspx" />
+    <Content Include="ViewSelfAssessment.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dsAppointment.Designer.cs" />
@@ -2340,6 +2342,20 @@
     </Compile>
     <Compile Include="SeachPatientAssessment.aspx.designer.cs">
       <DependentUpon>SeachPatientAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAppointment.aspx.cs">
+      <DependentUpon>SearchAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchAppointment.aspx.designer.cs">
+      <DependentUpon>SearchAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSelfAssessment.aspx.cs">
+      <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSelfAssessment.aspx.designer.cs">
+      <DependentUpon>ViewSelfAssessment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
